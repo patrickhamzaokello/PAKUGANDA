@@ -6,20 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".Fragments.MapFragment">
 
-    <com.google.android.material.card.MaterialCardView
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_margin="10dp"
-        android:layout_weight="1"
-        app:cardBackgroundColor="@color/black"
-        app:cardCornerRadius="50dp"
 
-        >
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="5dp">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background"
+            android:backgroundTint="@color/white"
+            android:elevation="2dp"
+            android:orientation="vertical"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="20dp"
+            android:padding="8dp">
 
             <Button
                 android:id="@+id/infrastructure_filter"
@@ -27,12 +25,31 @@
                 android:layout_height="30dp"
                 android:layout_centerInParent="true"
                 android:background="@drawable/custom_filter_btn"
-                android:theme="@style/WhiteBtn" />
+                android:theme="@style/MapOverButton" />
 
-        </RelativeLayout>
+            <Button
+                android:id="@+id/normal"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/custome_map_icon"
+                android:theme="@style/MapOverButton"
+                 />
+
+            <Button
+                android:id="@+id/satelite"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/custome_sattlite"
+                android:theme="@style/MapOverButton"
+                />
+
+        </LinearLayout>
 
 
-    </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.gms.maps.MapView
         android:layout_alignParentTop="true"

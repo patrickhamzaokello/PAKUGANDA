@@ -90,7 +90,7 @@ public class MapFragment extends Fragment implements FilterCallBack {
     ArrayList<Infrastructure> filtered_infrastructures;
 
 
-    Button infrastructure_filter;
+    Button infrastructure_filter,normalButton,satelliteButton;
     ProgressBar main_progress;
 
 
@@ -144,6 +144,8 @@ public class MapFragment extends Fragment implements FilterCallBack {
         locationManager = (LocationManager) requireContext().getSystemService(Context.LOCATION_SERVICE);
         initView(view, savedInstanceState);
         infrastructure_filter = view.findViewById(R.id.infrastructure_filter);
+        normalButton = view.findViewById(R.id.normal);
+        satelliteButton = view.findViewById(R.id.satelite);
         infrastructure_filter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -199,8 +201,6 @@ public class MapFragment extends Fragment implements FilterCallBack {
                 googleMap.getUiSettings().setAllGesturesEnabled(true);
                 googleMap.getUiSettings().setZoomControlsEnabled(true);
 
-//                create satelite view
-//                googleMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
                 try {
 
                     boolean success = googleMap.setMapStyle(
@@ -213,6 +213,20 @@ public class MapFragment extends Fragment implements FilterCallBack {
                 } catch (Resources.NotFoundException e) {
                     Log.e(TAG, "Can't find style.", e);
                 }
+
+                satelliteButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        googleMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
+                    }
+                });
+
+                normalButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+                    }
+                });
             }
         } else {
             if (ContextCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
