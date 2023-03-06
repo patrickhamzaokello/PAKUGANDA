@@ -1,66 +1,153 @@
 package com.example.pakuganda.Fragments;
 
+import static com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions.withCrossFade;
+
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.request.RequestOptions;
+import com.bumptech.glide.request.transition.DrawableCrossFadeFactory;
+import com.example.pakuganda.Database.LocalStorage;
+import com.example.pakuganda.HelperClasses.SharedPrefManager;
+import com.example.pakuganda.LoginMaterial;
+import com.example.pakuganda.MalUtils.NetworkStatusIntentService;
+import com.example.pakuganda.Models.UserModel;
+import com.example.pakuganda.NetworkReceiver;
+import com.example.pakuganda.NetworkStateChecker;
 import com.example.pakuganda.R;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link SettingsFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import cn.pedant.SweetAlert.SweetAlertDialog;
+
 public class SettingsFragment extends Fragment {
-
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public SettingsFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment SettingsFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static SettingsFragment newInstance(String param1, String param2) {
-        SettingsFragment fragment = new SettingsFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
+    LocalStorage db;
+    TextView textViewUsername, textViewEmail, other_info;
+    ImageView profile_image;
+    ImageButton backbtn;
+    private DrawableCrossFadeFactory factory;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_settings, container, false);
+        View view = inflater.inflate(R.layout.fragment_settings, container, false);
+
+        if (!SharedPrefManager.getInstance(getContext()).isLoggedIn()) {
+            startActivity(new Intent(getContext(), LoginMaterial.class));
+        }
+        factory = new DrawableCrossFadeFactory.Builder().setCrossFadeEnabled(true).build();
+
+        textViewUsername = (TextView) view.findViewById(R.id.full_name);
+        profile_image = (ImageView) view.findViewById(R.id.profile_image);
+        textViewEmail = (TextView) view.findViewById(R.id.email_text);
+        other_info = (TextView) view.findViewById(R.id.other_info);
+        backbtn = view.findViewById(R.id.backbtn);
+
+
+        UserModel userModel = SharedPrefManager.getInstance(getContext()).getUser();
+
+        //setting the values to the textviews
+        textViewUsername.setText(userModel.getFull_name());
+        textViewEmail.setText(userModel.getEmail());
+        other_info.setText(userModel.getUsername() + ", " + userModel.getPhone());
+
+        Glide.with(getContext())
+                .applyDefaultRequestOptions(new RequestOptions()
+                        .placeholder(R.drawable.ic_launcher_background)
+                        .error(R.drawable.ic_launcher_background))
+                .load(userModel.getProfilePic())
+                .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)     // cache both original & resized image
+                .centerCrop()
+                .transition(withCrossFade(factory))
+                .into(profile_image);
+
+        //when the user presses logout button
+        //calling the logout method
+        view.findViewById(R.id.buttonLogout).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                new SweetAlertDialog(getContext(), SweetAlertDialog.WARNING_TYPE)
+                        .setTitleText("Logout!")
+                        .setContentText("You will be required to Sign in next time")
+                        .setConfirmText("OK")
+                        .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                            @Override
+                            public void onClick(SweetAlertDialog sDialog) {
+
+                                sDialog.dismissWithAnimation();
+                                db = new LocalStorage(getContext());
+                                db.clearDatabases();
+
+
+                                GoogleSignInOptions googleSignInOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                                        .requestIdToken(getString(R.string.default_web_client_id))
+                                        .requestEmail()
+                                        .build();
+                                GoogleSignInClient googleSignInClient = GoogleSignIn.getClient(getContext(), googleSignInOptions);
+
+                                GoogleSignInAccount gAccount = GoogleSignIn.getLastSignedInAccount(getContext());
+
+                                if (gAccount != null) {
+                                    googleSignInClient.signOut().addOnCompleteListener(new OnCompleteListener<Void>() {
+                                        @Override
+                                        public void onComplete(Task<Void> task) {
+                                            SharedPrefManager.getInstance(getContext()).logout();
+                                        }
+                                    });
+                                } else {
+                                    SharedPrefManager.getInstance(getContext()).logout();
+                                }
+
+                            }
+                        }).show();
+
+            }
+        });
+
+        backbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).popBackStack();
+            }
+        });
+
+
+        return view;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        // network register and start background serice for network status
+        LocalBroadcastManager.getInstance(getContext()).registerReceiver(new NetworkReceiver(), new IntentFilter(NetworkStatusIntentService.ACTION_NETWORK_STATUS));
+        Intent networkIntent = new Intent(getContext(), NetworkStatusIntentService.class);
+        getContext().startService(networkIntent);
+
+
+
     }
 }

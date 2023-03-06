@@ -40,9 +40,9 @@
 
 
     <style name="WhiteBtn" parent="Theme.AppCompat.Light">
-        <item name="colorPrimary">#FFFFFF</item>
-        <item name="colorPrimaryDark">#FFFFFF</item>
-        <item name="colorAccent">#FFFFFF</item>
+        <item name="colorPrimary">@color/selected_menu</item>
+        <item name="colorPrimaryDark">@color/selected_menu</item>
+        <item name="colorAccent">@color/selected_menu</item>
     </style>
 
 
