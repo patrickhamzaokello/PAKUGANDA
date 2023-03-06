@@ -58,6 +58,7 @@ import com.google.android.material.button.MaterialButton;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -124,14 +125,14 @@ public class MapFragment extends Fragment implements FilterCallBack {
         // Required empty public constructor
     }
 
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-
+        if (savedInstanceState != null) {
+            // Retrieve saved state information for your fragment here
         }
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -140,7 +141,7 @@ public class MapFragment extends Fragment implements FilterCallBack {
         View view = inflater.inflate(R.layout.fragment_map, container, false);
         main_progress = view.findViewById(R.id.main_progress);
         apiEndPoints = APIBase.getClient(getContext()).create(ApiEndPoints.class);
-        locationManager = (LocationManager) getContext().getSystemService(Context.LOCATION_SERVICE);
+        locationManager = (LocationManager) requireContext().getSystemService(Context.LOCATION_SERVICE);
         initView(view, savedInstanceState);
         infrastructure_filter = view.findViewById(R.id.infrastructure_filter);
         infrastructure_filter.setOnClickListener(new View.OnClickListener() {
@@ -165,6 +166,13 @@ public class MapFragment extends Fragment implements FilterCallBack {
     }
 
     @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        mapView.onSaveInstanceState(outState);
+    }
+
+
+    @Override
     public void onResume() {
         super.onResume();
         mapView.onResume();
@@ -184,16 +192,17 @@ public class MapFragment extends Fragment implements FilterCallBack {
     }
 
     private void initMap() {
-        if (ContextCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED || ContextCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+        if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED || ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
             if (googleMap != null) {
                 googleMap.setMyLocationEnabled(true);
                 googleMap.getUiSettings().setMyLocationButtonEnabled(true);
                 googleMap.getUiSettings().setAllGesturesEnabled(true);
                 googleMap.getUiSettings().setZoomControlsEnabled(true);
+
+//                create satelite view
 //                googleMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
                 try {
-                    // Customise the styling of the base map using a JSON object defined
-                    // in a raw resource file.
+
                     boolean success = googleMap.setMapStyle(
                             MapStyleOptions.loadRawResourceStyle(
                                     getContext(), R.raw.style));
@@ -295,11 +304,8 @@ public class MapFragment extends Fragment implements FilterCallBack {
     private void initMarker(List<Infrastructure> listData) {
 
         if (listData != null) {
-            //iterasi semua data dan tampilkan markernya
             for (int i = 0; i < listData.size(); i++) {
-                //set latlng nya
                 LatLng location = new LatLng(Double.parseDouble(listData.get(i).getLatitude()), Double.parseDouble(listData.get(i).getLongitude()));
-                //tambahkan markernya
 
                 int finalI = i;
                 Glide.with(this)
@@ -326,18 +332,13 @@ public class MapFragment extends Fragment implements FilterCallBack {
                         });
 
 
-                //set latlng index ke 0
             }
             LatLng latLng = new LatLng(Double.parseDouble(listData.get(0).getLatitude()), Double.parseDouble(listData.get(0).getLongitude()));
-            //lalu arahkan zooming ke marker index ke 0
             googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(latLng.latitude, latLng.longitude), 15.0f));
 
-            // adding on click listener to marker of google maps.
             googleMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
                 @Override
                 public boolean onMarkerClick(Marker marker) {
-                    // on marker click we are getting the title of our marker
-                    // which is clicked and displaying it in a toast message.
                     int markerId = (int) marker.getZIndex();
                     showDialog(listData.get(markerId));
                     return false;

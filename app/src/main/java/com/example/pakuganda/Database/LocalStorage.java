@@ -14,7 +14,7 @@ import java.util.List;
 
 public class LocalStorage extends SQLiteOpenHelper {
 
-    private static final String DB_NAME = "Mwonya";
+    private static final String DB_NAME = "pakUganda";
     private static final int DB_VERSION = 3;
     private static final String TABLE_TRACK = "track";
     private static final String TABLE_ArtistFollowing = "ArtistFollowing";
