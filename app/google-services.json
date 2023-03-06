@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "969725716750",
+    "firebase_url": "https://pak-4-humanity-default-rtdb.firebaseio.com",
     "project_id": "pak-4-humanity",
     "storage_bucket": "pak-4-humanity.appspot.com"
   },
@@ -14,7 +15,15 @@
       },
       "oauth_client": [
         {
-          "client_id": "969725716750-uk1g9lrn3blqapn3k8qbv63q5n1b7vch.apps.googleusercontent.com",
+          "client_id": "969725716750-1r82adbs16hj6a6ognfkk28bbejssq0t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.pakuganda",
+            "certificate_hash": "f4abab3a35683ab347bd1981cae9addb0219937e"
+          }
+        },
+        {
+          "client_id": "969725716750-tv0ilv6qjkjn9en14mss29bthmkruabr.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
@@ -27,7 +36,7 @@
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "969725716750-uk1g9lrn3blqapn3k8qbv63q5n1b7vch.apps.googleusercontent.com",
+              "client_id": "969725716750-tv0ilv6qjkjn9en14mss29bthmkruabr.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
