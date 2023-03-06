@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "969725716750",
+    "project_id": "pak-4-humanity",
+    "storage_bucket": "pak-4-humanity.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:969725716750:android:999a2dc9abbff889afcf5f",
+        "android_client_info": {
+          "package_name": "com.example.pakuganda"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "969725716750-uk1g9lrn3blqapn3k8qbv63q5n1b7vch.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCLq3kWRtf41kI39sLJspg22RLONfyhTXE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "969725716750-uk1g9lrn3blqapn3k8qbv63q5n1b7vch.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
