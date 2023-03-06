@@ -3,12 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragments.Home">
+    tools:context=".Fragments.MapFragment">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:textColor="@color/black"
-        android:text="Home" />
-
+        android:text="Maps" />
 </FrameLayout>

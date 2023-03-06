@@ -6,7 +6,6 @@
     <color name="statusBarColor">#000B0D</color>
     <color name="secondary_variant">#00ACC1</color>
     <color name="black">#000B0D</color>
-
     <color name="white">#FFFFFFFF</color>
     <color name="user_bg">#196999</color>
     <color name="text_on_green">#D5FFFFFF</color>
@@ -16,7 +15,7 @@
     <color name="input_hints">#196999</color>
     <color name="input_hint2">#196999</color>
     <color name="user_bg_not_selected">#A599DA</color>
-    <color name="navigationcolors">#B9E4E4</color>
     <color name="main_bg">#FFFFFF</color>
+    <color name="nav_unselected">#94FFFFFF</color>
 
 </resources>

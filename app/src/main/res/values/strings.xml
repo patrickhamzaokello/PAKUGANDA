@@ -3,10 +3,10 @@
     <string name="learnmore">Learn more about us from our website www.malai.com</string>
     <string name="continue_agree">By continuing, you indicate that you agree to our terms &amp; condition involved</string>
     <string name="title_home">Home</string>
-    <string name="title_search">Reports</string>
+    <string name="title_search">Needs</string>
     <string name="title_library">Settings</string>
-    <string name="analyze">Analyze</string>
-    <string name="title_events">notifications</string>
+    <string name="analyze">Map</string>
+    <string name="title_events">Schedule</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
