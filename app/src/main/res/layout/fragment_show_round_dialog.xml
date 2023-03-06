@@ -1,0 +1,158 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="20dp"
+    android:paddingVertical="20dp"
+    android:background="@drawable/cornercircle"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        >
+
+
+        <TextView
+            android:id="@+id/type_lable"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:fontFamily="@font/lexend_light"
+            android:gravity="left"
+            android:includeFontPadding="false"
+            android:text="Type"
+            android:layout_marginBottom="5dp"
+            android:textColor="#000"
+            android:textSize="15sp" />
+
+
+        <TextView
+            android:id="@+id/type_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/type_lable"
+            android:layout_alignParentLeft="true"
+            android:layout_marginRight="20dp"
+            android:fontFamily="@font/lexend_regular"
+            android:gravity="left"
+            android:includeFontPadding="false"
+            android:text="Recycling Hub"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/aim_lable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/type_lable"
+            android:layout_centerInParent="true"
+            android:layout_toRightOf="@+id/type_text"
+            android:fontFamily="@font/lexend_regular"
+            android:gravity="center_vertical"
+            android:includeFontPadding="false"
+            android:text="School"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        >
+
+
+        <TextView
+            android:id="@+id/location_lable"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:fontFamily="@font/lexend_regular"
+            android:gravity="left"
+            android:includeFontPadding="false"
+            android:text="Location Coordinates"
+            android:textColor="#000"
+            android:textSize="15sp" />
+
+
+        <TextView
+            android:id="@+id/latittude"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/location_lable"
+            android:layout_alignParentLeft="true"
+            android:layout_marginRight="10dp"
+            android:fontFamily="@font/lexend_regular"
+            android:gravity="left"
+            android:layout_marginTop="5dp"
+            android:includeFontPadding="false"
+            android:text="latitude: 29.7059444"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/longitude"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/latittude"
+            android:fontFamily="@font/lexend_regular"
+            android:gravity="left"
+            android:includeFontPadding="false"
+            android:text="Longitude: 29.7059444"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/section_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/section_show_all_button"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/lexend_regular"
+        android:gravity="left"
+        android:layout_marginBottom="5dp"
+        android:includeFontPadding="false"
+        android:text="Description"
+        android:textColor="#000"
+        android:textSize="15sp" />
+
+
+    <TextView
+        android:id="@+id/waste_infras_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/section_label"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="30dp"
+        android:fontFamily="@font/lexend_regular"
+        android:gravity="left"
+        android:includeFontPadding="false"
+        android:text="Your meal order has been placed successfully. We are currently processing it now and you will get a call to confirm your order."
+        android:textColor="@color/black"
+        android:textSize="14sp" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnViewOrder"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Report Issue"
+        android:textColor="@color/black"
+        android:transitionName="account_change"
+        app:layout_constraintStart_toStartOf="parent"
+        app:strokeColor="@color/black"
+        app:strokeWidth="1dp" />
+
+
+
+
+</LinearLayout>
