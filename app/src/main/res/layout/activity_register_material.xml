@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="@color/white"
     tools:context=".RegisterMaterial">
 
@@ -43,8 +43,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/lexend_regular"
                 android:includeFontPadding="false"
-                android:text="Create an account to start using MalAI"
-                android:textAlignment="center"
+                android:text="Create an account to start using PAK 4 Humanity"
                 android:textColor="@color/primary_color"
                 android:textSize="18sp"
                 android:transitionName="logo_desc" />
@@ -298,6 +297,7 @@
                 android:layout_marginTop="5dp"
                 android:fontFamily="@font/lexend_regular"
                 android:gravity="center"
+                android:paddingBottom="30dp"
                 android:text="@string/learnmore"
                 android:textColor="@color/primary_color"
                 android:textSize="12dp" />

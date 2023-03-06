@@ -48,8 +48,7 @@
                 android:layout_marginTop="5dp"
                 android:fontFamily="@font/lexend_regular"
                 android:includeFontPadding="false"
-                android:text="Log in to MalAI to get started"
-                android:textAlignment="center"
+                android:text="Log in to PAK 4 Humanity to get started"
                 android:textColor="@color/primary_color"
                 android:textSize="22sp"
                 android:transitionName="logo_desc" />
@@ -146,7 +145,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Login to Mal Ai"
+                        android:text="Login to Pak.UG"
                         android:fontFamily="@font/lexend_light"
                         android:textColor="@color/white"
                         android:textSize="15sp"/>

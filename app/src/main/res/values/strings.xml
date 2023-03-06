@@ -1,13 +1,12 @@
 <resources>
     <string name="app_name">Pak Uganda</string>
-    <string name="learnmore">Learn more about us from our website www.malai.com</string>
+    <string name="learnmore">Learn more about us from our website www.pakug.com</string>
     <string name="continue_agree">By continuing, you indicate that you agree to our terms &amp; condition involved</string>
     <string name="title_home">Home</string>
     <string name="title_search">Needs</string>
     <string name="title_library">Settings</string>
     <string name="analyze">Map</string>
     <string name="title_events">Schedule</string>
-<!--    <string name="google_maps_key">AIzaSyAM4ueq-xMmTbdx0YiUXQmga17FTN4an30</string>-->
     <string name="google_maps_key">AIzaSyC1f3koudcFIxEA0LzRsnox3hm1ZaXdqCQ</string>
     <string name="i_am_here">Me</string>
     <string name="provider_failed">Error, Location is off</string>
