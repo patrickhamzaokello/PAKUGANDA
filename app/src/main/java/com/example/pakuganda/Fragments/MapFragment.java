@@ -4,6 +4,7 @@ import android.Manifest;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.pm.PackageManager;
+import android.content.res.ColorStateList;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -146,6 +147,8 @@ public class MapFragment extends Fragment implements FilterCallBack {
         infrastructure_filter = view.findViewById(R.id.infrastructure_filter);
         normalButton = view.findViewById(R.id.normal);
         satelliteButton = view.findViewById(R.id.satelite);
+        normalButton.setBackgroundTintList(ColorStateList.valueOf(getContext().getColor(R.color.selected_menu)));
+        satelliteButton.setBackgroundTintList(ColorStateList.valueOf(getContext().getColor(R.color.not_selected_filter)));
         infrastructure_filter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -218,6 +221,9 @@ public class MapFragment extends Fragment implements FilterCallBack {
                     @Override
                     public void onClick(View v) {
                         googleMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
+                        satelliteButton.setBackgroundTintList(ColorStateList.valueOf(getContext().getColor(R.color.selected_menu)));
+                        normalButton.setBackgroundTintList(ColorStateList.valueOf(getContext().getColor(R.color.not_selected_filter)));
+
                     }
                 });
 
@@ -225,6 +231,9 @@ public class MapFragment extends Fragment implements FilterCallBack {
                     @Override
                     public void onClick(View v) {
                         googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+                        normalButton.setBackgroundTintList(ColorStateList.valueOf(getContext().getColor(R.color.selected_menu)));
+                        satelliteButton.setBackgroundTintList(ColorStateList.valueOf(getContext().getColor(R.color.not_selected_filter)));
+
                     }
                 });
             }

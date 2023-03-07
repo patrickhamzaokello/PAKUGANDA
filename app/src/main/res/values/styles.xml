@@ -39,10 +39,10 @@
     </style>
 
 
-    <style name="MapOverButton" parent="Theme.AppCompat.Light">
-        <item name="colorPrimary">#2E2E2E</item>
-        <item name="colorPrimaryDark">#2E2E2E</item>
-        <item name="colorAccent">#2E2E2E</item>
+    <style name="MapOverButton" parent="Theme.AppCompat.DayNight">
+        <item name="colorPrimary">@color/not_selected_filter</item>
+        <item name="colorPrimaryDark">@color/not_selected_filter</item>
+        <item name="colorAccent">@color/not_selected_filter</item>
     </style>
 
 

@@ -18,5 +18,6 @@
     <color name="main_bg">#FFFFFF</color>
     <color name="nav_unselected">#94FFFFFF</color>
     <color name="selected_menu">#00FF0A</color>
+    <color name="not_selected_filter">#DAFFFFFF</color>
 
 </resources>

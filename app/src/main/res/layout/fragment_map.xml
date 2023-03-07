@@ -12,40 +12,66 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/background"
-            android:backgroundTint="@color/white"
             android:elevation="2dp"
             android:orientation="vertical"
             android:layout_marginHorizontal="20dp"
-            android:layout_marginTop="20dp"
-            android:padding="8dp">
+            android:layout_marginTop="10dp"
+            android:padding="10dp">
 
             <Button
                 android:id="@+id/infrastructure_filter"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:foreground="?attr/selectableItemBackground"
+                android:clickable="true"
                 android:background="@drawable/custom_filter_btn"
                 android:theme="@style/MapOverButton" />
-
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Filter Map"
+                android:layout_gravity="center"
+                android:textSize="8sp"
+                android:textColor="#B7FFFFFF"/>
             <Button
                 android:id="@+id/normal"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_marginTop="20dp"
-                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:foreground="?attr/selectableItemBackground"
+                android:clickable="true"
                 android:background="@drawable/custome_map_icon"
                 android:theme="@style/MapOverButton"
                  />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Default view"
+                android:textSize="8sp"
+                android:layout_gravity="center"
+                android:textColor="#B7FFFFFF"/>
 
             <Button
                 android:id="@+id/satelite"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_marginTop="20dp"
-                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:foreground="?attr/selectableItemBackground"
+                android:clickable="true"
                 android:background="@drawable/custome_sattlite"
                 android:theme="@style/MapOverButton"
                 />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Satellite view"
+                android:textSize="8sp"
+                android:layout_gravity="center"
+                android:textColor="#B7FFFFFF"/>
 
         </LinearLayout>
 
