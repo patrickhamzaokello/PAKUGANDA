@@ -2,6 +2,7 @@ package com.example.pakuganda.Apis;
 
 
 import com.example.pakuganda.Models.HomeFeed;
+import com.example.pakuganda.Models.MapBase;
 import com.example.pakuganda.Models.UserAuth;
 
 import retrofit2.Call;
@@ -24,8 +25,8 @@ public interface ApiEndPoints {
             @Body UserAuth userAuth
     );
 
-    @GET("near_me.php")
-    Call<HomeFeed> getAllInfrastructure(
+    @GET("map.php")
+    Call<MapBase> getAllInfrastructure(
             @Query("page") int pageIndex
     );
 

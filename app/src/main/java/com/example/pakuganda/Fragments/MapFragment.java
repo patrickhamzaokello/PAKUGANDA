@@ -43,6 +43,8 @@ import com.example.pakuganda.Apis.ApiEndPoints;
 import com.example.pakuganda.MalUtils.FilterCallBack;
 import com.example.pakuganda.Models.HomeFeed;
 import com.example.pakuganda.Models.Infrastructure;
+import com.example.pakuganda.Models.MapBase;
+import com.example.pakuganda.Models.MapFeature;
 import com.example.pakuganda.Models.Type;
 import com.example.pakuganda.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -85,10 +87,10 @@ public class MapFragment extends Fragment implements FilterCallBack {
     private int currentPage = PAGE_START;
 
     private ApiEndPoints apiEndPoints;
-    List<Infrastructure> all_infrastructures;
+    List<MapFeature> mapFeatureList;
     List<Type> all_typeList;
     ArrayList<String> filtered_tags;
-    ArrayList<Infrastructure> filtered_infrastructures;
+    ArrayList<MapFeature> filtered_infrastructures;
 
 
     Button infrastructure_filter,normalButton,satelliteButton;
@@ -299,14 +301,14 @@ public class MapFragment extends Fragment implements FilterCallBack {
 
         currentPage = PAGE_START;
 
-        callInfrastructure().enqueue(new Callback<HomeFeed>() {
+        callInfrastructure().enqueue(new Callback<MapBase>() {
             @Override
-            public void onResponse(Call<HomeFeed> call, Response<HomeFeed> response) {
+            public void onResponse(Call<MapBase> call, Response<MapBase> response) {
 
-                List<Infrastructure> infrastructures = fetchResults(response);
+                List<MapFeature> infrastructures = fetchResults(response);
                 if (infrastructures != null && !infrastructures.isEmpty()) {
-                    all_infrastructures = infrastructures;
-                    initMarker(all_infrastructures);
+                    mapFeatureList = infrastructures;
+                    initMarker(mapFeatureList);
                 } else {
                     main_progress.setVisibility(View.GONE);
                     Toast.makeText(getContext(), "Error Fetching Data",Toast.LENGTH_SHORT).show();
@@ -316,7 +318,7 @@ public class MapFragment extends Fragment implements FilterCallBack {
             }
 
             @Override
-            public void onFailure(Call<HomeFeed> call, Throwable t) {
+            public void onFailure(Call<MapBase> call, Throwable t) {
                 t.printStackTrace();
                 Log.i("onFailure", String.valueOf(t));
 
@@ -324,20 +326,20 @@ public class MapFragment extends Fragment implements FilterCallBack {
         });
     }
 
-    private void initMarker(List<Infrastructure> listData) {
+    private void initMarker(List<MapFeature> listData) {
 
         if (listData != null) {
             for (int i = 0; i < listData.size(); i++) {
-                LatLng location = new LatLng(Double.parseDouble(listData.get(i).getLatitude()), Double.parseDouble(listData.get(i).getLongitude()));
+                LatLng location = new LatLng(Double.parseDouble(listData.get(i).getLat()), Double.parseDouble(listData.get(i).getLong()));
 
                 int finalI = i;
                 Glide.with(this)
                         .applyDefaultRequestOptions(new RequestOptions()
                                 .override(60, 60)
-                                .placeholder(R.drawable.ic_dashicons_trash)
-                                .error(R.drawable.ic_dashicons_trash))
+                                .placeholder(R.drawable.resource_default)
+                                .error(R.drawable.resource_default))
                         .asBitmap()
-                        .load(listData.get(i).getIconpath())
+                        .load(listData.get(i).getIconPath())
                         .into(new CustomTarget<Bitmap>() {
                             @Override
                             public void onResourceReady(@NonNull Bitmap resource, @Nullable Transition<? super Bitmap> transition) {
@@ -356,7 +358,7 @@ public class MapFragment extends Fragment implements FilterCallBack {
 
 
             }
-            LatLng latLng = new LatLng(Double.parseDouble(listData.get(0).getLatitude()), Double.parseDouble(listData.get(0).getLongitude()));
+            LatLng latLng = new LatLng(Double.parseDouble(listData.get(0).getLat()), Double.parseDouble(listData.get(0).getLong()));
             googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(latLng.latitude, latLng.longitude), 15.0f));
 
             googleMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
@@ -384,7 +386,7 @@ public class MapFragment extends Fragment implements FilterCallBack {
     }
 
 
-    private void showDialog(Infrastructure infrastructure) {
+    private void showDialog(MapFeature infrastructure) {
 
         final Dialog dialog = new Dialog(getContext());
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -397,9 +399,9 @@ public class MapFragment extends Fragment implements FilterCallBack {
         TextView waste_infras_desc = dialog.findViewById(R.id.waste_infras_desc);
 
         type_text.setText(infrastructure.getType());
-        aim_lable.setText(infrastructure.getAim());
-        latittude.setText("Lat: " + infrastructure.getLatitude());
-        longitude.setText("Long: " + infrastructure.getLongitude());
+        aim_lable.setText(infrastructure.getDescription());
+        latittude.setText("Lat: " + infrastructure.getLat());
+        longitude.setText("Long: " + infrastructure.getLong());
         waste_infras_desc.setText(infrastructure.getDescription());
 
 
@@ -465,22 +467,20 @@ public class MapFragment extends Fragment implements FilterCallBack {
             filtered_tags.add(name);
         }
 
-        for (int i = 0; i < all_infrastructures.size(); i++) {
-            if (filtered_tags.contains(all_infrastructures.get(i).getType())) {
-                filtered_infrastructures.add(all_infrastructures.get(i));
+        for (int i = 0; i < mapFeatureList.size(); i++) {
+            if (filtered_tags.contains(mapFeatureList.get(i).getType())) {
+                filtered_infrastructures.add(mapFeatureList.get(i));
             }
 
         }
     }
 
 
-    private List<Infrastructure> fetchResults(Response<HomeFeed> response) {
-        HomeFeed homeFeed = response.body();
-        if (homeFeed != null) {
-            TOTAL_PAGES = homeFeed.getTotalPages();
-            all_typeList = homeFeed.getTypes();
-            System.out.println("total pages" + TOTAL_PAGES);
-            return homeFeed.getInfrastructure();
+    private List<MapFeature> fetchResults(Response<MapBase> response) {
+        MapBase mapBase = response.body();
+        if (mapBase != null) {
+            all_typeList = mapBase.getTypes();
+            return mapBase.getMapFeatures();
         } else {
             return null;
         }
@@ -488,7 +488,7 @@ public class MapFragment extends Fragment implements FilterCallBack {
     }
 
 
-    private Call<HomeFeed> callInfrastructure() {
+    private Call<MapBase> callInfrastructure() {
         return apiEndPoints.getAllInfrastructure(
                 currentPage
         );

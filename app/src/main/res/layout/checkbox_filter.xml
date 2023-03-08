@@ -22,7 +22,7 @@
         android:layout_height="20dp"
         android:layout_centerVertical="true"
         android:layout_alignParentStart="true"
-        android:src="@drawable/ic_fontisto_trash"
+        android:src="@drawable/resource_default"
         />
 
     <CheckBox

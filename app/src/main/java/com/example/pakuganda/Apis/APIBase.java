@@ -95,9 +95,7 @@ public class APIBase {
             retrofit = new Retrofit.Builder()
                     .client(buildClient(context))
                     .addConverterFactory(GsonConverterFactory.create())
-//                    .baseUrl("http://192.168.0.130:8080/projects/MwonyaaApi/Requests/endpoints/")
-//                    .baseUrl("https://shop.mwonyaa.com/Requests/endpoints/")
-                    .baseUrl("https://xyzobide.kakebeshop.com/mwonyaaAPI/Requests/endpoints/")
+                    .baseUrl("https://xyzobide.kakebeshop.com/pakUG/Requests/endpoints/")
                     .build();
         }
         return retrofit;

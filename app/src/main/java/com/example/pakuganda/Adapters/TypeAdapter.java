@@ -66,8 +66,8 @@ public class TypeAdapter extends ArrayAdapter<Type> {
         });
         Glide.with(getContext())
                 .applyDefaultRequestOptions(new RequestOptions()
-                        .placeholder(R.drawable.ic_dashicons_trash)
-                        .error(R.drawable.ic_dashicons_trash))
+                        .placeholder(R.drawable.resource_default)
+                        .error(R.drawable.resource_default))
                 .load(type.getIconpath())
                 .diskCacheStrategy(DiskCacheStrategy.ALL)   // cache both original & resized image
                 .centerCrop()
