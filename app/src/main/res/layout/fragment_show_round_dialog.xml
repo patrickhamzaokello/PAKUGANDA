@@ -1,4 +1,6 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -7,152 +9,147 @@
     android:background="@drawable/cornercircle"
     android:orientation="vertical">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        >
-
-
-        <TextView
-            android:id="@+id/type_lable"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:fontFamily="@font/lexend_light"
-            android:gravity="left"
-            android:includeFontPadding="false"
-            android:text="Type"
-            android:layout_marginBottom="5dp"
-            android:textColor="#000"
-            android:textSize="15sp" />
-
-
-        <TextView
-            android:id="@+id/type_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/type_lable"
-            android:layout_alignParentLeft="true"
-            android:layout_marginRight="20dp"
-            android:fontFamily="@font/lexend_regular"
-            android:gravity="left"
-            android:includeFontPadding="false"
-            android:text="Recycling Hub"
-            android:textColor="@color/black"
-            android:textSize="14sp" />
-
-        <TextView
-            android:id="@+id/aim_lable"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/type_lable"
-            android:layout_centerInParent="true"
-            android:layout_toRightOf="@+id/type_text"
-            android:fontFamily="@font/lexend_regular"
-            android:gravity="center_vertical"
-            android:includeFontPadding="false"
-            android:text="School"
-            android:textColor="@color/black"
-            android:textSize="14sp" />
-
-    </RelativeLayout>
-
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        >
-
-
-        <TextView
-            android:id="@+id/location_lable"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:fontFamily="@font/lexend_regular"
-            android:gravity="left"
-            android:includeFontPadding="false"
-            android:text="Location Coordinates"
-            android:textColor="#000"
-            android:textSize="15sp" />
-
-
-        <TextView
-            android:id="@+id/latittude"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/location_lable"
-            android:layout_alignParentLeft="true"
-            android:layout_marginRight="10dp"
-            android:fontFamily="@font/lexend_regular"
-            android:gravity="left"
-            android:layout_marginTop="5dp"
-            android:includeFontPadding="false"
-            android:text="latitude: 29.7059444"
-            android:textColor="@color/black"
-            android:textSize="14sp" />
-
-        <TextView
-            android:id="@+id/longitude"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/latittude"
-            android:fontFamily="@font/lexend_regular"
-            android:gravity="left"
-            android:includeFontPadding="false"
-            android:text="Longitude: 29.7059444"
-            android:textColor="@color/black"
-            android:textSize="14sp" />
-
-    </RelativeLayout>
-
 
     <TextView
-        android:id="@+id/section_label"
-        android:layout_width="match_parent"
+        android:id="@+id/featureHeading"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/section_show_all_button"
-        android:layout_alignParentLeft="true"
+        android:textSize="25sp"
+        android:text="Kigorobya village"
         android:layout_marginTop="20dp"
-        android:fontFamily="@font/lexend_regular"
-        android:gravity="left"
-        android:layout_marginBottom="5dp"
-        android:includeFontPadding="false"
-        android:text="Description"
-        android:textColor="#000"
-        android:textSize="15sp" />
-
+        android:fontFamily="@font/lexend_bold"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
 
     <TextView
-        android:id="@+id/waste_infras_desc"
-        android:layout_width="match_parent"
+        android:id="@+id/feature_description"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/section_label"
         android:layout_alignParentLeft="true"
         android:layout_marginBottom="30dp"
-        android:fontFamily="@font/lexend_regular"
+        android:fontFamily="@font/lexend_light"
+        app:layout_constraintTop_toBottomOf="@id/featureHeading"
         android:gravity="left"
         android:includeFontPadding="false"
-        android:text="Your meal order has been placed successfully. We are currently processing it now and you will get a call to confirm your order."
-        android:textColor="@color/black"
-        android:textSize="14sp" />
-
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnViewOrder"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Report Issue"
-        android:textColor="@color/black"
-        android:transitionName="account_change"
         app:layout_constraintStart_toStartOf="parent"
-        app:strokeColor="@color/black"
-        app:strokeWidth="1dp" />
+        android:layout_marginTop="10dp"
+        android:text="The village of Kigorobya is located in Kigorobya, Hoima county. It has a population of 3000 people and 600 families. The main source of water is Protected well, and it is High priority. The last update was on 2021-03-10."
+        android:textColor="@color/black"
+        android:textSize="18sp" />
+    <TextView
+        android:id="@+id/viewbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:includeFontPadding="false"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#009A08"
+        android:textSize="15dp"
+        android:foreground="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:layout_marginTop="20dp"
+        android:paddingHorizontal="15dp"
+        android:paddingVertical="5dp"
+        android:background="@drawable/smallrounded"
+        android:fontFamily="@font/lexend_extra_light"
+        app:layout_constraintTop_toBottomOf="@id/feature_description"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="Village"
+        android:focusable="true" />
 
 
 
 
-</LinearLayout>
+
+
+
+
+
+    <TextView
+        android:id="@+id/latittude"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:includeFontPadding="false"
+        android:textColor="#1C1C1C"
+        android:backgroundTint="#0C000000"
+        android:textSize="15dp"
+        android:foreground="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:paddingHorizontal="15dp"
+        android:paddingVertical="5dp"
+        android:background="@drawable/smallrounded"
+        android:fontFamily="@font/lexend_extra_light"
+        app:layout_constraintTop_toTopOf="@+id/viewbtn"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintStart_toEndOf="@+id/viewbtn"
+        android:text="Latitude: 29.7059444"
+        android:focusable="true" />
+
+
+    <TextView
+        android:id="@+id/longitude"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:includeFontPadding="false"
+        android:textColor="#1C1C1C"
+        android:backgroundTint="#0C000000"
+        android:textSize="15dp"
+        android:foreground="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:paddingHorizontal="15dp"
+        android:paddingVertical="5dp"
+        android:background="@drawable/smallrounded"
+        android:fontFamily="@font/lexend_extra_light"
+        app:layout_constraintTop_toBottomOf="@+id/latittude"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="Longitude: 29.7059444"
+        android:focusable="true" />
+
+    <LinearLayout
+        android:id="@+id/viewDetails"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/rounded_btn_bg"
+        android:foreground="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:paddingVertical="10dp"
+        android:layout_marginTop="18dp"
+        android:backgroundTint="@color/black"
+        android:paddingHorizontal="20dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/longitude"
+        android:orientation="horizontal">
+
+
+
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/ic_outline_map"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="View Details"
+            android:fontFamily="@font/lexend_light"
+            android:textColor="@color/white"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:textSize="15sp"/>
+
+    </LinearLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

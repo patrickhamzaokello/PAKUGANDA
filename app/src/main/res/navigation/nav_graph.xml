@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -17,7 +16,33 @@
         android:id="@+id/navigation_map"
         android:name="com.example.pakuganda.Fragments.MapFragment"
         tools:layout="@layout/fragment_map"
-        android:label="@string/analyze" />
+        android:label="@string/analyze">
+
+        <action
+            android:id="@+id/action_to_selectedVillageFragment"
+            app:destination="@id/selectedVillageFragment"
+            app:popUpTo="@id/navigation_map"
+            app:popUpToSaveState="true"
+            app:restoreState="false" />
+        <action
+            android:id="@+id/action_to_selectedDeepWellFragment"
+            app:destination="@id/selectedDeepWell"
+            app:popUpTo="@id/navigation_map"
+            app:popUpToSaveState="true"
+            app:restoreState="false" />
+
+        <action
+            android:id="@+id/action_to_selectedActivityFragment"
+            app:destination="@id/selectedActivityFragment"
+            app:popUpTo="@id/navigation_map"
+            app:popUpToSaveState="true"
+            app:restoreState="false" />
+
+        <argument
+            android:name="mapFeatureID"
+            android:defaultValue="None"
+            app:argType="string" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_needs"
@@ -37,6 +62,23 @@
         android:name="com.example.pakuganda.Fragments.SettingsFragment"
         tools:layout="@layout/fragment_settings"
         android:label="@string/title_library" />
+
+
+    <fragment
+        android:id="@+id/selectedVillageFragment"
+        android:name="com.example.pakuganda.Fragments.SelectedVillageFragment"
+        android:label="fragment_selected_village"
+        tools:layout="@layout/fragment_selected_village" />
+    <fragment
+        android:id="@+id/selectedDeepWell"
+        android:name="com.example.pakuganda.Fragments.SelectedDeepWellFragment"
+        android:label="fragment_selected_deep_well"
+        tools:layout="@layout/fragment_selected_deep_well" />
+    <fragment
+        android:id="@+id/selectedActivityFragment"
+        android:name="com.example.pakuganda.Fragments.SelectedActivityFragment"
+        android:label="fragment_selected_activity"
+        tools:layout="@layout/fragment_selected_activity" />
 
 
 </navigation>

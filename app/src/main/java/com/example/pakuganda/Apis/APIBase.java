@@ -96,6 +96,7 @@ public class APIBase {
                     .client(buildClient(context))
                     .addConverterFactory(GsonConverterFactory.create())
                     .baseUrl("https://xyzobide.kakebeshop.com/pakUG/Requests/endpoints/")
+//                    .baseUrl("http://192.168.0.155:8080/projects/PAKUG/Requests/endpoints/")
                     .build();
         }
         return retrofit;

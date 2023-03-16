@@ -19,5 +19,7 @@
     <color name="nav_unselected">#94FFFFFF</color>
     <color name="selected_menu">#00FF0A</color>
     <color name="not_selected_filter">#DAFFFFFF</color>
+    <color name="pullupColor">#7C000000</color>
+    <color name="error_map_path">#4CAF50</color>
 
 </resources>

@@ -3,16 +3,21 @@ package com.example.pakuganda;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.NavigationUI;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
+import com.example.pakuganda.MalUtils.NetworkStatusIntentService;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
@@ -26,6 +31,17 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         AskPermissions();
         setUpNavigation();
+        // network register and start background serice for network status
+        LocalBroadcastManager.getInstance(this).registerReceiver(new NetworkReceiver(), new IntentFilter(NetworkStatusIntentService.ACTION_NETWORK_STATUS));
+
+
+        try {
+            Intent networkIntent = new Intent(this, NetworkStatusIntentService.class);
+            startService(networkIntent);
+        } catch (IllegalStateException e) {
+            // Handle the exception
+            Log.e("root", "Unable to start service: " + e.getMessage());
+        }
 
     }
 

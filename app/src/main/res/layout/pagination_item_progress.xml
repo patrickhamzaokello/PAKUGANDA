@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:background="@color/white">
+
+    <ProgressBar
+        android:id="@+id/loadmore_progress"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:theme="@style/CircularProgress"
+        android:layout_gravity="center"/>
+
+    <LinearLayout
+        android:id="@+id/loadmore_errorlayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/md"
+        android:paddingTop="@dimen/md"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <ImageButton
+            android:id="@+id/loadmore_retry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/md"
+            android:layout_marginStart="@dimen/md"
+            android:background="@color/white"
+            android:padding="@dimen/md"
+            android:src="@drawable/ic_baseline_refresh_24"
+            app:tint="@color/black"
+            android:tintMode="src_in"
+            tools:targetApi="lollipop"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="@dimen/md"
+            android:layout_marginLeft="@dimen/md"
+            android:layout_marginRight="@dimen/md"
+            android:layout_marginStart="@dimen/md"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/loadmore_errortxt"
+                style="@style/Base.TextAppearance.AppCompat.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lexend_light"
+                android:textColor="@color/black"
+                tools:text="What went wrong"/>
+
+            <TextView
+                style="@style/Base.TextAppearance.AppCompat.Caption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:fontFamily="@font/lexend_extra_light"
+                android:text="Tap to Reload"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

@@ -15,6 +15,7 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -22,6 +23,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -32,6 +34,9 @@ import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.fragment.NavHostFragment;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
@@ -93,7 +98,7 @@ public class MapFragment extends Fragment implements FilterCallBack {
     ArrayList<MapFeature> filtered_infrastructures;
 
 
-    Button infrastructure_filter,normalButton,satelliteButton;
+    Button infrastructure_filter, normalButton, satelliteButton;
     ProgressBar main_progress;
 
 
@@ -311,7 +316,7 @@ public class MapFragment extends Fragment implements FilterCallBack {
                     initMarker(mapFeatureList);
                 } else {
                     main_progress.setVisibility(View.GONE);
-                    Toast.makeText(getContext(), "Error Fetching Data",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "Error Fetching Data", Toast.LENGTH_SHORT).show();
                 }
 
 
@@ -343,12 +348,13 @@ public class MapFragment extends Fragment implements FilterCallBack {
                         .into(new CustomTarget<Bitmap>() {
                             @Override
                             public void onResourceReady(@NonNull Bitmap resource, @Nullable Transition<? super Bitmap> transition) {
+                                Bitmap resizedBitmap = Bitmap.createScaledBitmap(resource, 100, 100, false);
                                 googleMap.addMarker(
                                         new MarkerOptions()
                                                 .position(location)
                                                 .zIndex(finalI)
-                                                .title(listData.get(finalI).getType())
-                                                .icon(BitmapDescriptorFactory.fromBitmap(resource)));
+                                                .title(listData.get(finalI).getName())
+                                                .icon(BitmapDescriptorFactory.fromBitmap(resizedBitmap)));
                             }
 
                             @Override
@@ -386,23 +392,56 @@ public class MapFragment extends Fragment implements FilterCallBack {
     }
 
 
-    private void showDialog(MapFeature infrastructure) {
+    private void showDialog(MapFeature mapFeature) {
 
         final Dialog dialog = new Dialog(getContext());
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.fragment_show_round_dialog);
 
-        TextView type_text = dialog.findViewById(R.id.type_text);
-        TextView aim_lable = dialog.findViewById(R.id.aim_lable);
+        TextView featureHeading = dialog.findViewById(R.id.featureHeading);
+        TextView feature_description = dialog.findViewById(R.id.feature_description);
         TextView latittude = dialog.findViewById(R.id.latittude);
         TextView longitude = dialog.findViewById(R.id.longitude);
-        TextView waste_infras_desc = dialog.findViewById(R.id.waste_infras_desc);
+        TextView feature_type = dialog.findViewById(R.id.viewbtn);
 
-        type_text.setText(infrastructure.getType());
-        aim_lable.setText(infrastructure.getDescription());
-        latittude.setText("Lat: " + infrastructure.getLat());
-        longitude.setText("Long: " + infrastructure.getLong());
-        waste_infras_desc.setText(infrastructure.getDescription());
+        LinearLayout viewDetails = dialog.findViewById(R.id.viewDetails);
+
+        featureHeading.setText(mapFeature.getName());
+        feature_description.setText(mapFeature.getDescription());
+        feature_type.setText(mapFeature.getType());
+
+        latittude.setText("lat: " + mapFeature.getLat());
+        longitude.setText("long: " + mapFeature.getLong());
+
+        viewDetails.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String mapFeatureID = mapFeature.getId();
+
+                if (!TextUtils.isEmpty(mapFeatureID)) {
+                    Bundle bundle = new Bundle();
+                    bundle.putString("mapFeatureID", mapFeatureID);
+                    NavController navController = NavHostFragment.findNavController(requireParentFragment());
+
+                    switch (mapFeature.getType()) {
+                        case "village":
+                            navController.navigate(R.id.action_to_selectedVillageFragment,bundle);
+                            dialog.dismiss();
+                            return;
+                        case "deepwell":
+                            navController.navigate(R.id.action_to_selectedDeepWellFragment,bundle);
+                            dialog.dismiss();
+                            return;
+                        case "activity":
+                            navController.navigate(R.id.action_to_selectedActivityFragment,bundle);
+                            dialog.dismiss();
+
+                    }
+
+
+                }
+            }
+        });
 
 
         dialog.show();
