@@ -1,9 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginHorizontal="@dimen/edge_val"
+    android:layout_marginTop="30dp"
+    >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/heading_into"
+        android:text="Village"
+        android:textColor="@color/black"
+        android:textAllCaps="true"
+        android:fontFamily="@font/lexend_light"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -11,20 +25,142 @@
         android:id="@+id/heading"
         android:text="heading"
         android:textColor="@color/black"
+        android:fontFamily="@font/lexend_bold"
+        android:layout_marginTop="8dp"
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
-        android:padding="20dp"
-        app:layout_constraintBottom_toTopOf="@id/item_recycler_view"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/heading_into" />
 
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/item_recycler_view"
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/villagecounty"
+        android:text="Village"
+        android:textColor="#63000000"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/lexend_light"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/heading" />
+
+    <View
+        android:id="@+id/lineheading"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:paddingBottom="4dp"
+        android:layout_height="1dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/heading"
+        android:background="#63000000"
+        android:layout_marginTop="5dp"
+        app:layout_constraintTop_toBottomOf="@id/villagecounty"
         />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/description"
+        android:text="DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription"
+        android:textColor="#9C000000"
+        android:layout_marginTop="8dp"
+        android:lineHeight="27dp"
+        android:fontFamily="@font/lexend_light"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lineheading" />
+
+
+
+    <TextView
+        android:id="@+id/dataSummaryheading"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Summary about the village"
+        app:layout_constraintTop_toBottomOf="@+id/description"
+        android:textColor="@color/black"
+        android:layout_marginTop="20dp"
+        />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/dataSummaryheading">
+
+        <LinearLayout
+            android:id="@+id/view1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/data_round_bg"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="1dp">
+
+
+            <TextView
+                android:id="@+id/familyno"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:textColor="#009688"
+                android:text="29" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#009688"
+
+                android:text="Total Families" />
+
+        </LinearLayout>
+
+        <!-- View 2 -->
+        <LinearLayout
+            android:id="@+id/view2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/data_round_bg"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:layout_marginStart="10dp"
+            app:layout_constraintStart_toEndOf="@id/view1"
+            app:layout_constraintTop_toTopOf="@id/view1"
+          >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:textColor="#009688"
+                android:id="@+id/populationno"
+                android:text="29" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#009688"
+
+                android:text="Total Population" />
+
+        </LinearLayout>
+
+        <!-- View 3 -->
+
+
+
+        <!-- Repeat the above pattern for View 4 to View 10 -->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

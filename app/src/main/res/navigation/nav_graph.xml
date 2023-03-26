@@ -8,13 +8,13 @@
     <fragment
         android:id="@+id/navigation_home"
         android:label="@string/title_home"
-        android:name="com.example.pakuganda.Fragments.Home"
+        android:name="com.pkasemer.pakuganda.Fragments.Home"
         tools:layout="@layout/fragment_home" >
     </fragment>
 
     <fragment
         android:id="@+id/navigation_map"
-        android:name="com.example.pakuganda.Fragments.MapFragment"
+        android:name="com.pkasemer.pakuganda.Fragments.MapFragment"
         tools:layout="@layout/fragment_map"
         android:label="@string/analyze">
 
@@ -46,37 +46,37 @@
 
     <fragment
         android:id="@+id/navigation_needs"
-        android:name="com.example.pakuganda.Fragments.NeedsFragment"
+        android:name="com.pkasemer.pakuganda.Fragments.NeedsFragment"
         tools:layout="@layout/fragment_needs"
         android:label="@string/title_search"
         />
 
     <fragment
         android:id="@+id/navigation_schedule"
-        android:name="com.example.pakuganda.Fragments.ScheduleFragment"
+        android:name="com.pkasemer.pakuganda.Fragments.ScheduleFragment"
         tools:layout="@layout/fragment_schedule_fragment"
         android:label="@string/title_events" />
 
     <fragment
         android:id="@+id/navigation_settings"
-        android:name="com.example.pakuganda.Fragments.SettingsFragment"
+        android:name="com.pkasemer.pakuganda.Fragments.SettingsFragment"
         tools:layout="@layout/fragment_settings"
         android:label="@string/title_library" />
 
 
     <fragment
         android:id="@+id/selectedVillageFragment"
-        android:name="com.example.pakuganda.Fragments.SelectedVillageFragment"
+        android:name="com.pkasemer.pakuganda.Fragments.SelectedVillageFragment"
         android:label="fragment_selected_village"
         tools:layout="@layout/fragment_selected_village" />
     <fragment
         android:id="@+id/selectedDeepWell"
-        android:name="com.example.pakuganda.Fragments.SelectedDeepWellFragment"
+        android:name="com.pkasemer.pakuganda.Fragments.SelectedDeepWellFragment"
         android:label="fragment_selected_deep_well"
         tools:layout="@layout/fragment_selected_deep_well" />
     <fragment
         android:id="@+id/selectedActivityFragment"
-        android:name="com.example.pakuganda.Fragments.SelectedActivityFragment"
+        android:name="com.pkasemer.pakuganda.Fragments.SelectedActivityFragment"
         android:label="fragment_selected_activity"
         tools:layout="@layout/fragment_selected_activity" />
 

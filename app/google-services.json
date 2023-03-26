@@ -8,17 +8,17 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:969725716750:android:999a2dc9abbff889afcf5f",
+        "mobilesdk_app_id": "1:969725716750:android:82336d19319d86f7afcf5f",
         "android_client_info": {
-          "package_name": "com.example.pakuganda"
+          "package_name": "com.pkasemer.pakuganda"
         }
       },
       "oauth_client": [
         {
-          "client_id": "969725716750-1r82adbs16hj6a6ognfkk28bbejssq0t.apps.googleusercontent.com",
+          "client_id": "969725716750-d8pe6b9vo52r1g806q5a94njhngf6kd4.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.pakuganda",
+            "package_name": "com.pkasemer.pakuganda",
             "certificate_hash": "f4abab3a35683ab347bd1981cae9addb0219937e"
           }
         },

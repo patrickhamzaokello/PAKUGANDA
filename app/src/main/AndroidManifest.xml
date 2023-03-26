@@ -34,22 +34,23 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PakUganda"
         tools:replace="android:icon"
+        tools:ignore="UnusedAttribute"
         tools:targetApi="31">
         <activity
             android:name=".OnBoarding"
             android:exported="false" />
         <activity
             android:name=".RegisterMaterial"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".LoginMaterial"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".Authentication"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".SplashActivity"
             android:exported="true"

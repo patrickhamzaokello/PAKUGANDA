@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.pakuganda'
+    namespace 'com.pkasemer.pakuganda'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.pakuganda"
+        applicationId "com.pkasemer.pakuganda"
         minSdk 25
         targetSdk 33
         versionCode 1
