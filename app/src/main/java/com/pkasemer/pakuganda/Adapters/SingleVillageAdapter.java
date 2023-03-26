@@ -131,8 +131,8 @@ public class SingleVillageAdapter extends RecyclerView.Adapter<RecyclerView.View
                 needs_recyclerHeaderVH.itemRecyclerView.setClipToPadding(false);
                 needs_recyclerHeaderVH.itemRecyclerView.setItemViewCacheSize(3);
                 needs_recyclerHeaderVH.itemRecyclerView.setPadding(0, 0, 100, 0);
-//                SingleVillageActivityAdapter singleVillageActivityAdapter = new SingleVillageActivityAdapter(context,featured.getActivities());
-//                recyclerHeaderVH.itemRecyclerView.setAdapter(singleVillageActivityAdapter);
+                SingleVillageNeedAdapter singleVillageNeedAdapter = new SingleVillageNeedAdapter(context,featured.getNeeds());
+                needs_recyclerHeaderVH.itemRecyclerView.setAdapter(singleVillageNeedAdapter);
 
                 break;
             case LEADERS:
@@ -144,8 +144,8 @@ public class SingleVillageAdapter extends RecyclerView.Adapter<RecyclerView.View
                 leaders_recyclerHeaderVH.itemRecyclerView.setClipToPadding(false);
                 leaders_recyclerHeaderVH.itemRecyclerView.setItemViewCacheSize(3);
                 leaders_recyclerHeaderVH.itemRecyclerView.setPadding(0, 0, 100, 0);
-//                SingleVillageActivityAdapter singleVillageActivityAdapter = new SingleVillageActivityAdapter(context,featured.getActivities());
-//                recyclerHeaderVH.itemRecyclerView.setAdapter(singleVillageActivityAdapter);
+                SingleVillageLeaderAdapter singleVillageLeaderAdapter = new SingleVillageLeaderAdapter(context,featured.getLeaders());
+                leaders_recyclerHeaderVH.itemRecyclerView.setAdapter(singleVillageLeaderAdapter);
 
                 break;
 
@@ -159,8 +159,9 @@ public class SingleVillageAdapter extends RecyclerView.Adapter<RecyclerView.View
                 deepwell_recyclerHeaderVH.itemRecyclerView.setClipToPadding(false);
                 deepwell_recyclerHeaderVH.itemRecyclerView.setItemViewCacheSize(3);
                 deepwell_recyclerHeaderVH.itemRecyclerView.setPadding(0, 0, 100, 0);
-//                SingleVillageActivityAdapter singleVillageActivityAdapter = new SingleVillageActivityAdapter(context,featured.getActivities());
-//                recyclerHeaderVH.itemRecyclerView.setAdapter(singleVillageActivityAdapter);
+//
+                SingleVillageDeepwellAdapter singleVillageDeepwellAdapter = new SingleVillageDeepwellAdapter(context, featured.getDeepWell());
+                deepwell_recyclerHeaderVH.itemRecyclerView.setAdapter(singleVillageDeepwellAdapter);
 
                 break;
 
@@ -174,8 +175,8 @@ public class SingleVillageAdapter extends RecyclerView.Adapter<RecyclerView.View
                 outreach_recyclerHeaderVH.itemRecyclerView.setClipToPadding(false);
                 outreach_recyclerHeaderVH.itemRecyclerView.setItemViewCacheSize(3);
                 outreach_recyclerHeaderVH.itemRecyclerView.setPadding(0, 0, 100, 0);
-//                SingleVillageActivityAdapter singleVillageActivityAdapter = new SingleVillageActivityAdapter(context,featured.getActivities());
-//                recyclerHeaderVH.itemRecyclerView.setAdapter(singleVillageActivityAdapter);
+                SingleVillageOutreachAdapter singleVillageOutreachAdapter = new SingleVillageOutreachAdapter(context,featured.getOutreach());
+                outreach_recyclerHeaderVH.itemRecyclerView.setAdapter(singleVillageOutreachAdapter);
                 break;
 
             case VILLAGE:

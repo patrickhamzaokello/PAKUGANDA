@@ -9,13 +9,13 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/newReleaseCard"
-        android:layout_width="match_parent"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/edge_val"
         android:animateLayoutChanges="true"
         android:layout_marginStart="10dp"
         android:background="@drawable/card_rounded_bg"
-        android:backgroundTint="#C6D2FF"
+        android:backgroundTint="#C6FFD1"
         android:clickable="true"
         android:focusable="true"
         android:padding="@dimen/edge_val"
@@ -27,7 +27,7 @@
 
         <TextView
             android:id="@+id/heading"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ellipsize="end"
             android:fontFamily="@font/lexend_regular"
@@ -35,7 +35,6 @@
             android:text="Heading"
             android:textColor="#000"
             android:textSize="15sp"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

@@ -3,26 +3,22 @@ package com.pkasemer.pakuganda.Adapters;
 
 import android.content.Context;
 import android.os.Build;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import android.widget.TextView;
 
 import androidx.annotation.RequiresApi;
-
 import androidx.recyclerview.widget.RecyclerView;
 
-
 import com.bumptech.glide.request.transition.DrawableCrossFadeFactory;
-import com.pkasemer.pakuganda.Models.Activity;
+import com.pkasemer.pakuganda.Models.DeepWell;
+import com.pkasemer.pakuganda.Models.Outreach;
 import com.pkasemer.pakuganda.R;
-
 
 import java.util.List;
 
-public class SingleVillageActivityAdapter extends RecyclerView.Adapter<SingleVillageActivityAdapter.ItemViewHolder> {
+public class SingleVillageOutreachAdapter extends RecyclerView.Adapter<SingleVillageOutreachAdapter.ItemViewHolder> {
 
     class ItemViewHolder extends RecyclerView.ViewHolder {
         private final TextView heading,subheading,description;
@@ -41,7 +37,7 @@ public class SingleVillageActivityAdapter extends RecyclerView.Adapter<SingleVil
     }
 
     private final Context context;
-    private final List<Activity> activities;
+    private final List<Outreach> outreachList;
 
 
     DrawableCrossFadeFactory factory =
@@ -49,25 +45,25 @@ public class SingleVillageActivityAdapter extends RecyclerView.Adapter<SingleVil
 
 
 
-    public SingleVillageActivityAdapter(Context context, List<Activity> activityList) {
+    public SingleVillageOutreachAdapter(Context context, List<Outreach> outreaches) {
         this.context = context;
-        this.activities = activityList;
+        this.outreachList = outreaches;
 
     }
 
     @Override
     public ItemViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.village_activity_layout, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.village_need_layout, parent, false);
         return new ItemViewHolder(view);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     public void onBindViewHolder(ItemViewHolder holder, int position) {
-        final Activity activity = activities.get(position);
-         holder.heading.setText(activity.getTitle());
-         holder.subheading.setText(activity.getInchargePerson() + ", Date Carried out:"+activity.getDateCarriedout());
-         holder.description.setText(activity.getDescription());
+        final Outreach outreach = outreachList.get(position);
+         holder.heading.setText(outreach.getTitle());
+         holder.subheading.setText("Start: "+outreach.getStartDate()+"End: "+ outreach.getEndDate());
+         holder.description.setText(outreach.getDescription());
 
     }
 
@@ -76,7 +72,7 @@ public class SingleVillageActivityAdapter extends RecyclerView.Adapter<SingleVil
 
     @Override
     public int getItemCount() {
-        return activities.size();
+        return outreachList.size();
     }
 
 
