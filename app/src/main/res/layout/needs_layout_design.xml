@@ -2,19 +2,54 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:layout_marginTop="8dp"
+    android:layout_marginHorizontal="@dimen/edge_val"
+    android:background="@drawable/rounded_btn_bg"
+    android:backgroundTint="#CCDBED"
+    android:padding="20dp"
+
+    >
 
     <TextView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Patrick"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:padding="20dp"
         android:id="@+id/needsTitle"
         android:textColor="@color/black"
-        android:fontFamily="@font/lexend_regular"
+        android:fontFamily="@font/lexend_bold"
         android:textSize="18sp"
         />
+
+    <TextView
+        android:id="@+id/subheading"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/lexend_regular"
+        android:includeFontPadding="false"
+        android:text="Heading"
+        android:textColor="#CB323232"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/needsTitle" />
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/lexend_regular"
+        android:includeFontPadding="false"
+        android:text="Heading"
+        android:layout_marginTop="8dp"
+        android:textColor="#CB323232"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/subheading" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

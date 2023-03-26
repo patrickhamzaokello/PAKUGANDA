@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="#DAEBFF"
     tools:context=".Fragments.SettingsFragment">
 
 
@@ -14,6 +14,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/settings_background"
         android:paddingHorizontal="@dimen/edge_val"
+        android:backgroundTint="@color/black"
         android:paddingBottom="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -35,7 +36,7 @@
             android:src="@drawable/ic_baseline_keyboard_backspace_24"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:tint="@color/black" />
+            app:tint="#14195C" />
 
 
         <TextView
@@ -46,7 +47,7 @@
             android:fontFamily="@font/lexend_extra_light"
             android:gravity="center"
             android:text="Profile"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -59,7 +60,7 @@
             android:fontFamily="@font/lexend_bold"
             android:gravity="center"
             android:text="ACCOUNT DETAILS"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="19sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -84,7 +85,7 @@
             android:fontFamily="@font/lexend_light"
             android:gravity="center"
             android:text="Manage all your account details from here."
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -123,7 +124,7 @@
             android:layout_marginTop="10dp"
             android:fontFamily="@font/lexend_bold"
             android:text="Patrick Okello"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -137,7 +138,7 @@
             android:layout_gravity="center"
             android:fontFamily="@font/lexend_regular"
             android:text="pkasemer@gmail.com"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="13sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -150,7 +151,7 @@
             android:layout_gravity="center"
             android:fontFamily="@font/lexend_regular"
             android:text="0787250196"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="13sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -165,7 +166,7 @@
             android:layout_marginHorizontal="20dp"
             android:layout_marginTop="18dp"
             android:background="@drawable/rounded_btn_bg"
-            android:backgroundTint="@color/black"
+            android:backgroundTint="#0A4167"
             android:clickable="true"
             android:foreground="?attr/selectableItemBackground"
             android:gravity="center"

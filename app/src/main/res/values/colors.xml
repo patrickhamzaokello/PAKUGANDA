@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="primary_color">#000B0D</color>
+    <color name="primary_color">#000542</color>
     <color name="primary_color_variant">#1E88E5</color>
-    <color name="navigationBarColor">#000B0D</color>
-    <color name="statusBarColor">#000B0D</color>
+    <color name="navigationBarColor">#000542</color>
+    <color name="statusBarColor">#000542</color>
     <color name="secondary_variant">#00ACC1</color>
-    <color name="black">#000B0D</color>
+    <color name="black">#000542</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="user_bg">#000B0D</color>
+    <color name="user_bg">#000542</color>
     <color name="text_on_green">#D5FFFFFF</color>
     <color name="text_heading">#ffffff</color>
-    <color name="input_colors">#131313</color>
+    <color name="input_colors">#000542</color>
     <color name="input_bg">#F3F3F3</color>
-    <color name="input_hints">#000B0D</color>
-    <color name="input_hint2">#000B0D</color>
+    <color name="input_hints">#000542</color>
+    <color name="input_hint2">#000542</color>
     <color name="user_bg_not_selected">#A599DA</color>
     <color name="main_bg">#FFFFFF</color>
     <color name="nav_unselected">#94FFFFFF</color>
     <color name="selected_menu">#00FF0A</color>
     <color name="not_selected_filter">#DAFFFFFF</color>
-    <color name="pullupColor">#7C000000</color>
+    <color name="pullupColor">#000542</color>
     <color name="error_map_path">#4CAF50</color>
 
 </resources>

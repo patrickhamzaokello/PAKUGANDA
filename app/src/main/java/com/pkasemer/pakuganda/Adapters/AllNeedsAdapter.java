@@ -106,7 +106,8 @@ public class AllNeedsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             case ARTIST:
                 final AlbumVH artistVH = (AlbumVH) holder;
                 artistVH.needsTitle.setText(searchResult.getTitle());
-//                artistVH.artist_desc.setText(searchResult.getDescription());
+                artistVH.subheading.setText("Date: "+searchResult.getDateAdded() + " - Village: "+searchResult.getVillage() + " - Status: "+searchResult.getStatus()+ " - Tags: "+searchResult.getTags());
+                artistVH.description.setText(searchResult.getDescription());
                 break;
 
 
@@ -228,13 +229,15 @@ public class AllNeedsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
      */
 
     protected class AlbumVH extends RecyclerView.ViewHolder {
-        private final TextView needsTitle;
+        private final TextView needsTitle,subheading,description;
 
 
         public AlbumVH(View itemView) {
             super(itemView);
             // init views
             needsTitle = itemView.findViewById(R.id.needsTitle);
+            subheading = itemView.findViewById(R.id.subheading);
+            description = itemView.findViewById(R.id.description);
         }
     }
 
