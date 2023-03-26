@@ -1,6 +1,7 @@
 package com.pkasemer.pakuganda.Apis;
 
 
+import com.pkasemer.pakuganda.Models.ActivitiesBase;
 import com.pkasemer.pakuganda.Models.MapBase;
 import com.pkasemer.pakuganda.Models.NeedsBase;
 import com.pkasemer.pakuganda.Models.SelectedVillage;
@@ -37,6 +38,12 @@ public interface ApiEndPoints {
     @GET("all_needs.php")
     @Headers("Cache-Control: no-cache")
     Call<NeedsBase> getAllNeeds(
+            @Query("page") int pageIndex
+    );
+
+    @GET("all_activities.php")
+    @Headers("Cache-Control: no-cache")
+    Call<ActivitiesBase> getAllActivities(
             @Query("page") int pageIndex
     );
 
