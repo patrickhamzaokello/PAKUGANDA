@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#5E9AA5"
+    android:background="#F3F3F3"
     android:gravity="center_vertical"
     android:orientation="vertical"
     android:scaleType="fitXY"
@@ -16,8 +16,18 @@
         android:layout_height="wrap_content"
         android:padding="20dp"
         android:orientation="vertical"
+        android:layout_gravity="center"
         >
-
+        <ImageView
+            android:id="@+id/splashimage2"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            app:tint="@color/md_theme_light_primary"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/dotted" />
 
 
         <TextView
@@ -25,10 +35,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/lexend_bold"
-            android:text="PAK UGANDA"
-            app:layout_constraintTop_toTopOf="parent"
-            android:textColor="@color/text_heading"
+            android:text="PAK4Humanity"
+            android:textColor="@color/md_theme_dark_scrim"
             android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@id/splashimage2"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:textSize="30dp" />
@@ -38,13 +48,13 @@
             android:id="@+id/mwonya_sub"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="15dp"
             android:layout_marginBottom="30dp"
             android:fontFamily="@font/lexend_light"
             app:layout_constraintTop_toBottomOf="@+id/mwonya_word"
             android:includeFontPadding="false"
             android:text="Spreading Love - Joy and Blessings to the people of Uganda."
-            android:textColor="#D5FFFFFF"
+            android:textColor="@color/md_theme_dark_scrim"
             android:gravity="center"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -80,7 +90,7 @@
                 android:layout_height="wrap_content"
                 android:text="Continue with Google"
                 android:fontFamily="@font/lexend_light"
-                android:textColor="@color/user_bg"
+                android:textColor="@color/md_theme_dark_scrim"
                 android:textSize="15sp"/>
 
         </LinearLayout>
@@ -113,7 +123,7 @@
                 android:layout_height="wrap_content"
                 android:text="Sign up with Email"
                 android:fontFamily="@font/lexend_light"
-                android:textColor="@color/user_bg"
+                android:textColor="@color/md_theme_dark_scrim"
                 android:textSize="15sp"/>
 
         </LinearLayout>
@@ -145,7 +155,7 @@
                 android:layout_height="wrap_content"
                 android:text="Login with Password"
                 android:fontFamily="@font/lexend_light"
-                android:textColor="@color/user_bg"
+                android:textColor="@color/md_theme_dark_scrim"
                 android:textSize="15sp"/>
 
         </LinearLayout>
@@ -161,7 +171,7 @@
             android:gravity="center"
             app:layout_constraintTop_toBottomOf="@+id/login_screen"
             android:text="@string/continue_agree"
-            android:textColor="@color/text_on_green"
+            android:textColor="@color/md_theme_dark_scrim"
             android:textSize="12dp" />
 
         <TextView
@@ -173,7 +183,7 @@
             android:gravity="center"
             app:layout_constraintTop_toBottomOf="@+id/agreement"
             android:text="@string/learnmore"
-            android:textColor="#FFFFFF"
+            android:textColor="@color/md_theme_dark_scrim"
             android:textSize="12dp" />
 
 

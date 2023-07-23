@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:layout_centerVertical="true"
     android:layout_centerInParent="true"
-    android:background="@color/white"
+    android:background="@color/md_theme_light_onPrimary"
     tools:context=".LoginMaterial">
 
     <RelativeLayout
@@ -35,7 +35,7 @@
                 android:fontFamily="@font/lexend_bold"
                 android:text="Login"
                 android:textAlignment="center"
-                android:textColor="@color/primary_color"
+                android:textColor="@color/md_theme_dark_scrim"
                 android:textSize="35sp"
                 android:transitionName="logo_text"
 
@@ -49,7 +49,7 @@
                 android:fontFamily="@font/lexend_regular"
                 android:includeFontPadding="false"
                 android:text="Log in to PAK 4 Humanity to get started"
-                android:textColor="@color/primary_color"
+                android:textColor="@color/md_theme_dark_scrim"
                 android:textSize="22sp"
                 android:transitionName="logo_desc" />
 
@@ -68,21 +68,21 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Username / Email"
-                    android:textColorHint="@color/input_hint2"
+                    android:textColorHint="@color/md_theme_dark_scrim"
                     android:transitionName="username_input"
-                    app:boxStrokeColor="@color/input_colors"
-                    app:boxStrokeErrorColor="@color/input_colors"
-                    app:endIconTint="@color/input_hints"
-                    app:hintTextColor="@color/input_hints">
+                    app:boxStrokeColor="@color/md_theme_light_primary"
+                    app:boxStrokeErrorColor="@color/md_theme_dark_onError"
+                    app:endIconTint="@color/md_theme_dark_scrim"
+                    app:hintTextColor="@color/md_theme_dark_scrim">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/inputTextUsername"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:backgroundTint="@color/input_bg"
+                        android:backgroundTint="@color/md_theme_light_onPrimary"
                         android:inputType="textAutoComplete"
                         android:fontFamily="@font/lexend_light"
-                        android:textColor="@color/input_colors" />
+                        android:textColor="@color/md_theme_dark_scrim" />
 
 
                 </com.google.android.material.textfield.TextInputLayout>
@@ -94,24 +94,24 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:hint="Password"
-                    android:textColorHint="@color/input_hint2"
+                    android:textColorHint="@color/md_theme_dark_scrim"
                     android:transitionName="password_input"
-                    app:boxStrokeColor="@color/input_colors"
-                    app:boxStrokeErrorColor="@color/input_colors"
-                    app:endIconTint="@color/input_hints"
-                    app:hintTextColor="@color/input_hints"
+                    app:boxStrokeColor="@color/md_theme_light_primary"
+                    app:boxStrokeErrorColor="@color/md_theme_dark_onError"
+                    app:endIconTint="@color/md_theme_dark_scrim"
+                    app:hintTextColor="@color/md_theme_dark_scrim"
                     app:passwordToggleEnabled="true"
-                    app:passwordToggleTint="@color/input_hints">
+                    app:passwordToggleTint="@color/md_theme_dark_scrim">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/inputTextPassword"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:backgroundTint="@color/input_bg"
+                        android:backgroundTint="@color/md_theme_light_onPrimary"
                         android:inputType="textPassword"
                         android:fontFamily="@font/lexend_light"
-                        android:textColor="@color/input_colors"
-                        app:endIconTint="@color/input_colors"
+                        android:textColor="@color/md_theme_dark_scrim"
+                        app:endIconTint="@color/md_theme_dark_scrim"
 
                         />
 
@@ -129,7 +129,7 @@
                     android:clickable="true"
                     android:paddingVertical="10dp"
                     android:layout_marginTop="18dp"
-                    android:backgroundTint="@color/primary_color"
+                    android:backgroundTint="@color/md_theme_light_primary"
                     android:paddingHorizontal="20dp"
                     android:gravity="center"
                     app:layout_constraintStart_toStartOf="parent"
@@ -146,8 +146,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Login to Pak.UG"
-                        android:fontFamily="@font/lexend_light"
-                        android:textColor="@color/white"
+                        android:fontFamily="@font/lexend_bold"
+                        android:textColor="@color/md_theme_light_onPrimary"
                         android:textSize="15sp"/>
 
                 </LinearLayout>
@@ -159,11 +159,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Register"
-                    android:textColor="@color/primary_color"
+                    android:textColor="@color/md_theme_dark_scrim"
                     android:transitionName="account_change"
                     app:layout_constraintStart_toStartOf="parent"
-                    android:fontFamily="@font/lexend_light"
-                    app:strokeColor="@color/primary_color"
+                    android:fontFamily="@font/lexend_bold"
+                    app:strokeColor="@color/md_theme_dark_scrim"
                     app:strokeWidth="1dp" />
 
                 <com.google.android.material.button.MaterialButton
@@ -173,11 +173,11 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:text="Forgot Password"
-                    android:textColor="@color/secondary_variant"
+                    android:textColor="@color/md_theme_dark_scrim"
                     android:transitionName="account_change"
                     android:visibility="gone"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:strokeColor="@color/user_bg"
+                    app:strokeColor="@color/md_theme_dark_scrim"
                     app:strokeWidth="1dp" />
 
 
@@ -190,7 +190,7 @@
                 android:fontFamily="@font/lexend_regular"
                 android:gravity="center"
                 android:text="@string/continue_agree"
-                android:textColor="@color/text_on_green"
+                android:textColor="@color/md_theme_dark_scrim"
                 android:textSize="12sp" />
 
             <TextView
@@ -200,7 +200,7 @@
                 android:fontFamily="@font/lexend_regular"
                 android:gravity="center"
                 android:text="@string/learnmore"
-                android:textColor="@color/text_on_green"
+                android:textColor="@color/md_theme_dark_scrim"
                 android:textSize="12sp" />
 
 

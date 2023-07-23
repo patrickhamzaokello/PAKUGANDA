@@ -4,20 +4,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragments.Home">
+    tools:context=".Fragments.Home"
+    android:background="@color/md_theme_light_onPrimary"
+    >
 
     <TextView
         android:id="@+id/Headinng"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="20dp"
-        android:background="@color/black"
+        android:background="@color/md_theme_dark_scrim"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:text="Home"
         android:fontFamily="@font/lexend_bold"
-        android:textColor="@color/white"
+        android:textColor="@color/md_theme_light_onPrimary"
         android:textSize="25sp" />
 
     <TextView
@@ -32,7 +34,7 @@
         android:text="Welcome to Pak4Humanity App"
         app:layout_constraintTop_toBottomOf="@id/Headinng"
         android:fontFamily="@font/lexend_bold"
-        android:textColor="@color/black"
+        android:textColor="@color/md_theme_dark_scrim"
         android:textSize="40sp" />
 
     <TextView
@@ -46,7 +48,7 @@
         android:text="We are all about spreading love and joy into communities"
         app:layout_constraintTop_toBottomOf="@id/intro"
         android:fontFamily="@font/lexend_regular"
-        android:textColor="@color/black"
+        android:textColor="@color/md_theme_dark_scrim"
         android:textSize="20sp" />
 
 
@@ -72,7 +74,7 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
             android:src="@drawable/material_location"
-            app:tint="@color/white" />
+            app:tint="@color/md_theme_light_onPrimary" />
 
         <TextView
             android:layout_width="wrap_content"

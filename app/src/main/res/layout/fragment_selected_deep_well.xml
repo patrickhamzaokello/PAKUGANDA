@@ -10,6 +10,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="Deep Well"
-        android:textColor="@color/black" />
+        android:textColor="@color/md_theme_dark_scrim" />
 
 </FrameLayout>

@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/lexend_bold"
             android:gravity="center"
-            android:textColor="@color/black"
+            android:textColor="@color/md_theme_dark_scrim"
             android:text="Oops. You're offline"/>
 
         <TextView
@@ -38,7 +38,7 @@
             style="@style/TextAppearance.AppCompat.Caption"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
+            android:textColor="@color/md_theme_dark_scrim"
             android:layout_gravity="center"
             android:fontFamily="@font/lexend_regular"
             android:layout_marginTop="8dp"
@@ -53,10 +53,10 @@
             android:layout_marginTop="@dimen/md"
             android:textAllCaps="false"
             android:fontFamily="@font/lexend_regular"
-            app:backgroundTint="@color/white"
+            app:backgroundTint="@color/md_theme_light_primary"
             android:background="@drawable/rounded_btn_bg"
             android:text="Try Connecting"
-            android:textColor="@color/primary_color"/>
+            android:textColor="@color/md_theme_light_onPrimary"/>
 
     </LinearLayout>
 

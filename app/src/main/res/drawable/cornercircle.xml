@@ -10,5 +10,5 @@
         android:left="10dp"
         android:right="10dp"
         />
-    <solid android:color="@color/white" />
+    <solid android:color="@color/md_theme_light_primary" />
 </shape>

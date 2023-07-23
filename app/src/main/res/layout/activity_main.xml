@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:animateLayoutChanges="true"
-    android:background="@color/main_bg"
+    android:background="@color/md_theme_light_onPrimary"
     tools:context=".MainActivity">
 
     <fragment
@@ -36,7 +36,7 @@
         app:labelVisibilityMode="labeled"
         android:paddingTop="8dp"
         android:elevation="20dp"
-        android:background="@color/primary_color"
+        android:background="@color/md_theme_light_onPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

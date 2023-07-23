@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android" >
     <item android:state_pressed="true"
-        android:color="@color/nav_unselected"/> <!-- pressed -->
+        android:color="@color/md_theme_dark_scrim"/> <!-- pressed -->
     <item android:state_focused="true"
-        android:color="@color/nav_unselected"/>
+        android:color="@color/md_theme_dark_scrim"/>
     <item android:state_selected="true"
-        android:color="@color/selected_menu"/>
+        android:color="@color/md_theme_light_primary"/>
 
     <item android:state_enabled="true"
-        android:color="@color/nav_unselected"/>
+        android:color="@color/md_theme_dark_scrim"/>
     <!-- focused -->
-    <item android:color="@color/nav_unselected"/> <!-- default -->
+    <item android:color="@color/md_theme_dark_scrim"/> <!-- default -->
 </selector>

@@ -152,8 +152,8 @@ public class MapFragment extends Fragment implements FilterCallBack {
         infrastructure_filter = view.findViewById(R.id.infrastructure_filter);
         normalButton = view.findViewById(R.id.normal);
         satelliteButton = view.findViewById(R.id.satelite);
-        normalButton.setBackgroundTintList(ColorStateList.valueOf(getContext().getColor(R.color.selected_menu)));
-        satelliteButton.setBackgroundTintList(ColorStateList.valueOf(getContext().getColor(R.color.not_selected_filter)));
+        normalButton.setBackgroundTintList(ColorStateList.valueOf(getContext().getColor(R.color.md_theme_light_primary)));
+        satelliteButton.setBackgroundTintList(ColorStateList.valueOf(getContext().getColor(R.color.white)));
         infrastructure_filter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -228,8 +228,8 @@ public class MapFragment extends Fragment implements FilterCallBack {
                     @Override
                     public void onClick(View v) {
                         googleMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
-                        satelliteButton.setBackgroundTintList(ColorStateList.valueOf(getContext().getColor(R.color.selected_menu)));
-                        normalButton.setBackgroundTintList(ColorStateList.valueOf(getContext().getColor(R.color.not_selected_filter)));
+                        satelliteButton.setBackgroundTintList(ColorStateList.valueOf(getContext().getColor(R.color.md_theme_light_primary)));
+                        normalButton.setBackgroundTintList(ColorStateList.valueOf(getContext().getColor(R.color.white)));
 
                     }
                 });
@@ -238,8 +238,8 @@ public class MapFragment extends Fragment implements FilterCallBack {
                     @Override
                     public void onClick(View v) {
                         googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
-                        normalButton.setBackgroundTintList(ColorStateList.valueOf(getContext().getColor(R.color.selected_menu)));
-                        satelliteButton.setBackgroundTintList(ColorStateList.valueOf(getContext().getColor(R.color.not_selected_filter)));
+                        normalButton.setBackgroundTintList(ColorStateList.valueOf(getContext().getColor(R.color.md_theme_light_primary)));
+                        satelliteButton.setBackgroundTintList(ColorStateList.valueOf(getContext().getColor(R.color.white)));
 
                     }
                 });

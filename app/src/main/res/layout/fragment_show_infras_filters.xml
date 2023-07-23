@@ -21,7 +21,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:text="Apply Filter to Map"
-            android:textColor="#000"
+            android:textColor="@color/md_theme_dark_scrim"
             android:textSize="25sp" />
 
 
@@ -39,7 +39,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/type_lable"
             android:text="Select type to filter"
-            android:textColor="@color/pullupColor"
+            android:textColor="@color/md_theme_dark_scrim"
             android:textSize="18sp" />
 
 

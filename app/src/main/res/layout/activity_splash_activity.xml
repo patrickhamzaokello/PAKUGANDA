@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
+    android:background="@color/md_theme_light_onPrimary"
     android:orientation="vertical"
     tools:context=".SplashActivity">
 
@@ -31,7 +31,7 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_gravity="center"
-                app:tint="#452ECA"
+                app:tint="@color/md_theme_light_primary"
                 android:src="@drawable/dotted" />
 
 
@@ -45,8 +45,8 @@
                 android:fontFamily="@font/lexend_bold"
                 android:gravity="center"
                 android:includeFontPadding="false"
-                android:text="PAK.UG"
-                android:textColor="@color/white"
+                android:text="PAK4Humanity"
+                android:textColor="@color/md_theme_dark_scrim"
                 android:textSize="30sp" />
 
             <TextView
@@ -59,8 +59,8 @@
                 android:gravity="center"
                 android:layout_marginTop="10dp"
                 android:includeFontPadding="false"
-                android:text="Spreading Joy, Happiness and Blessings in Uganda, Africa"
-                android:textColor="@color/white"
+                android:text="Borehole Tracking App"
+                android:textColor="@color/md_theme_dark_scrim"
                 android:textSize="18sp" />
 
 
@@ -79,7 +79,7 @@
             android:gravity="center"
             android:includeFontPadding="false"
             android:text="Powered by Kakebe Technologies"
-            android:textColor="@color/white"
+            android:textColor="@color/md_theme_dark_scrim"
             android:textSize="10sp" />
 
 

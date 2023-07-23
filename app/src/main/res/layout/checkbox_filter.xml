@@ -18,7 +18,7 @@
         android:layout_toRightOf="@+id/iconImage"
         android:layout_toLeftOf="@+id/checkBox"
         android:text="Welcome"
-        android:textColor="@color/black"
+        android:textColor="@color/md_theme_dark_scrim"
         android:textSize="16sp" />
 
     <ImageView
