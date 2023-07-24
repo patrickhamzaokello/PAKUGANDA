@@ -23,6 +23,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.ProgressBar;
@@ -41,16 +42,6 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.bumptech.glide.request.target.CustomTarget;
 import com.bumptech.glide.request.transition.Transition;
-import com.pkasemer.pakuganda.Adapters.TypeAdapter;
-import com.pkasemer.pakuganda.Apis.APIBase;
-import com.pkasemer.pakuganda.Apis.ApiEndPoints;
-import com.pkasemer.pakuganda.MalUtils.FilterCallBack;
-import com.pkasemer.pakuganda.Models.HomeFeed;
-import com.pkasemer.pakuganda.Models.Infrastructure;
-import com.pkasemer.pakuganda.Models.MapBase;
-import com.pkasemer.pakuganda.Models.MapFeature;
-import com.pkasemer.pakuganda.Models.Type;
-import com.pkasemer.pakuganda.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
@@ -62,6 +53,14 @@ import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.material.button.MaterialButton;
+import com.pkasemer.pakuganda.Adapters.TypeAdapter;
+import com.pkasemer.pakuganda.Apis.APIBase;
+import com.pkasemer.pakuganda.Apis.ApiEndPoints;
+import com.pkasemer.pakuganda.MalUtils.FilterCallBack;
+import com.pkasemer.pakuganda.Models.MapBase;
+import com.pkasemer.pakuganda.Models.MapFeature;
+import com.pkasemer.pakuganda.Models.Type;
+import com.pkasemer.pakuganda.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -96,7 +95,7 @@ public class MapFragment extends Fragment implements FilterCallBack {
     ArrayList<MapFeature> filtered_infrastructures;
 
 
-    Button infrastructure_filter, normalButton, satelliteButton;
+    ImageButton infrastructure_filter, normalButton, satelliteButton;
     ProgressBar main_progress;
 
 
@@ -153,7 +152,7 @@ public class MapFragment extends Fragment implements FilterCallBack {
         normalButton = view.findViewById(R.id.normal);
         satelliteButton = view.findViewById(R.id.satelite);
         normalButton.setBackgroundTintList(ColorStateList.valueOf(getContext().getColor(R.color.md_theme_light_primary)));
-        satelliteButton.setBackgroundTintList(ColorStateList.valueOf(getContext().getColor(R.color.white)));
+        satelliteButton.setBackgroundTintList(ColorStateList.valueOf(getContext().getColor(R.color.black)));
         infrastructure_filter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -229,7 +228,7 @@ public class MapFragment extends Fragment implements FilterCallBack {
                     public void onClick(View v) {
                         googleMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
                         satelliteButton.setBackgroundTintList(ColorStateList.valueOf(getContext().getColor(R.color.md_theme_light_primary)));
-                        normalButton.setBackgroundTintList(ColorStateList.valueOf(getContext().getColor(R.color.white)));
+                        normalButton.setBackgroundTintList(ColorStateList.valueOf(getContext().getColor(R.color.black)));
 
                     }
                 });
@@ -239,7 +238,7 @@ public class MapFragment extends Fragment implements FilterCallBack {
                     public void onClick(View v) {
                         googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
                         normalButton.setBackgroundTintList(ColorStateList.valueOf(getContext().getColor(R.color.md_theme_light_primary)));
-                        satelliteButton.setBackgroundTintList(ColorStateList.valueOf(getContext().getColor(R.color.white)));
+                        satelliteButton.setBackgroundTintList(ColorStateList.valueOf(getContext().getColor(R.color.black)));
 
                     }
                 });
@@ -332,13 +331,12 @@ public class MapFragment extends Fragment implements FilterCallBack {
     }
 
     private void initMarker(List<MapFeature> listData) {
-
         if (listData != null) {
             for (int i = 0; i < listData.size(); i++) {
                 LatLng location = new LatLng(Double.parseDouble(listData.get(i).getLat()), Double.parseDouble(listData.get(i).getLong()));
 
                 int finalI = i;
-                Glide.with(this)
+                Glide.with(getContext())
                         .applyDefaultRequestOptions(new RequestOptions()
                                 .override(60, 60)
                                 .placeholder(R.drawable.resource_default)
@@ -378,6 +376,7 @@ public class MapFragment extends Fragment implements FilterCallBack {
 
             main_progress.setVisibility(View.GONE);
         }
+
 
     }
 
@@ -425,15 +424,15 @@ public class MapFragment extends Fragment implements FilterCallBack {
 
                     switch (mapFeature.getType()) {
                         case "village":
-                            navController.navigate(R.id.action_to_selectedVillageFragment,bundle);
+                            navController.navigate(R.id.action_to_selectedVillageFragment, bundle);
                             dialog.dismiss();
                             return;
                         case "deepwell":
-                            navController.navigate(R.id.action_to_selectedDeepWellFragment,bundle);
+                            navController.navigate(R.id.action_to_selectedDeepWellFragment, bundle);
                             dialog.dismiss();
                             return;
                         case "activity":
-                            navController.navigate(R.id.action_to_selectedActivityFragment,bundle);
+                            navController.navigate(R.id.action_to_selectedActivityFragment, bundle);
                             dialog.dismiss();
 
                     }

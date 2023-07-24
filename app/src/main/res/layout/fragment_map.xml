@@ -4,6 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F3F3F3"
     tools:context=".Fragments.MapFragment">
 
 
@@ -14,27 +15,29 @@
             android:background="@drawable/background"
             android:elevation="2dp"
             android:orientation="vertical"
+            android:backgroundTint="@color/white"
             android:layout_marginHorizontal="15dp"
             android:layout_marginTop="10dp"
             android:padding="10dp">
 
-            <Button
+            <ImageButton
                 android:id="@+id/infrastructure_filter"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_gravity="center"
                 android:foreground="?attr/selectableItemBackground"
                 android:clickable="true"
-                android:background="@drawable/custom_filter_btn"
-                android:theme="@style/MapOverButton" />
+                android:background="@null"
+                app:tint="@color/black"
+                android:src="@drawable/custom_filter_btn" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Filter Map"
                 android:layout_gravity="center"
                 android:textSize="8sp"
-                android:textColor="#B7FFFFFF"/>
-            <Button
+                android:textColor="@color/black"/>
+            <ImageButton
                 android:id="@+id/normal"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
@@ -42,8 +45,9 @@
                 android:layout_gravity="center"
                 android:foreground="?attr/selectableItemBackground"
                 android:clickable="true"
-                android:background="@drawable/custome_map_icon"
-                android:theme="@style/MapOverButton"
+                android:background="@null"
+                app:tint="@color/black"
+                android:src="@drawable/custome_map_icon"
                  />
             <TextView
                 android:layout_width="wrap_content"
@@ -51,18 +55,19 @@
                 android:text="Default view"
                 android:textSize="8sp"
                 android:layout_gravity="center"
-                android:textColor="#B7FFFFFF"/>
+                android:textColor="@color/black"/>
 
-            <Button
+            <ImageButton
                 android:id="@+id/satelite"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_marginTop="20dp"
                 android:layout_gravity="center"
+                android:background="@null"
+                app:tint="@color/black"
                 android:foreground="?attr/selectableItemBackground"
                 android:clickable="true"
-                android:background="@drawable/custome_sattlite"
-                android:theme="@style/MapOverButton"
+                android:src="@drawable/custome_sattlite"
                 />
 
             <TextView
@@ -71,7 +76,7 @@
                 android:text="Satellite view"
                 android:textSize="8sp"
                 android:layout_gravity="center"
-                android:textColor="#B7FFFFFF"/>
+                android:textColor="@color/black"/>
 
         </LinearLayout>
 

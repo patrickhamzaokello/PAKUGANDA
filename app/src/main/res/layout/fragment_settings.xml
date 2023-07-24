@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#DAEBFF"
+    android:background="#F3F3F3"
     tools:context=".Fragments.SettingsFragment">
 
 
@@ -14,29 +14,12 @@
         android:layout_height="wrap_content"
         android:background="@drawable/settings_background"
         android:paddingHorizontal="@dimen/edge_val"
-        android:backgroundTint="@color/md_theme_dark_scrim"
+        android:backgroundTint="#FFFFFF"
         android:paddingBottom="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-
-
-        <ImageButton
-            android:id="@+id/backbtn"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/small_control_background"
-            android:backgroundTint="#1D000000"
-            android:clickable="true"
-            android:contentDescription="@string/app_name"
-            android:focusable="true"
-            android:foreground="?attr/selectableItemBackground"
-            android:src="@drawable/ic_baseline_keyboard_backspace_24"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:tint="#14195C" />
 
 
         <TextView
@@ -47,11 +30,11 @@
             android:fontFamily="@font/lexend_extra_light"
             android:gravity="center"
             android:text="Profile"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/backbtn" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/trackMainHeading"
@@ -60,7 +43,7 @@
             android:fontFamily="@font/lexend_bold"
             android:gravity="center"
             android:text="ACCOUNT DETAILS"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="19sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -85,7 +68,7 @@
             android:fontFamily="@font/lexend_light"
             android:gravity="center"
             android:text="Manage all your account details from here."
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -124,7 +107,7 @@
             android:layout_marginTop="10dp"
             android:fontFamily="@font/lexend_bold"
             android:text="Patrick Okello"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -138,7 +121,7 @@
             android:layout_gravity="center"
             android:fontFamily="@font/lexend_regular"
             android:text="pkasemer@gmail.com"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="13sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -151,7 +134,7 @@
             android:layout_gravity="center"
             android:fontFamily="@font/lexend_regular"
             android:text="0787250196"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="13sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -166,7 +149,7 @@
             android:layout_marginHorizontal="20dp"
             android:layout_marginTop="18dp"
             android:background="@drawable/rounded_btn_bg"
-            android:backgroundTint="#0A4167"
+            android:backgroundTint="@color/md_theme_light_primary"
             android:clickable="true"
             android:foreground="?attr/selectableItemBackground"
             android:gravity="center"

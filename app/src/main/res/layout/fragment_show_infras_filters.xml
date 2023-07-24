@@ -5,6 +5,7 @@
     android:layout_height="wrap_content"
     android:paddingHorizontal="20dp"
     android:background="@drawable/cornercircle"
+    android:backgroundTint="@color/white"
     android:orientation="vertical">
 
 
@@ -84,8 +85,8 @@
         android:layout_marginLeft="20dp"
         android:layout_marginBottom="20dp"
         android:transitionName="account_change"
-        app:backgroundTint="@color/black"
-        app:strokeColor="@color/black"
+        app:backgroundTint="@color/md_theme_light_primary"
+        app:strokeColor="@color/md_theme_light_primary"
         app:strokeWidth="1dp" />
 
 

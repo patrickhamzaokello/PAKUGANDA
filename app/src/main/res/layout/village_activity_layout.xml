@@ -15,7 +15,7 @@
         android:animateLayoutChanges="true"
         android:layout_marginStart="10dp"
         android:background="@drawable/card_rounded_bg"
-        android:backgroundTint="#C6D2FF"
+        android:backgroundTint="#FFFFFF"
         android:clickable="true"
         android:focusable="true"
         android:padding="@dimen/edge_val"

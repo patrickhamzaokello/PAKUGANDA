@@ -63,7 +63,6 @@ public class SettingsFragment extends Fragment {
         profile_image = (ImageView) view.findViewById(R.id.profile_image);
         textViewEmail = (TextView) view.findViewById(R.id.email_text);
         other_info = (TextView) view.findViewById(R.id.other_info);
-        backbtn = view.findViewById(R.id.backbtn);
 
 
         UserModel userModel = SharedPrefManager.getInstance(getContext()).getUser();
@@ -124,13 +123,6 @@ public class SettingsFragment extends Fragment {
                             }
                         }).show();
 
-            }
-        });
-
-        backbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Navigation.findNavController(view).popBackStack();
             }
         });
 
