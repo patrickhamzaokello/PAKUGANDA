@@ -25,7 +25,6 @@
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_gravity="center"
-                android:foreground="?attr/selectableItemBackground"
                 android:clickable="true"
                 android:background="@null"
                 app:tint="@color/black"
@@ -43,7 +42,6 @@
                 android:layout_height="30dp"
                 android:layout_marginTop="20dp"
                 android:layout_gravity="center"
-                android:foreground="?attr/selectableItemBackground"
                 android:clickable="true"
                 android:background="@null"
                 app:tint="@color/black"
@@ -65,7 +63,6 @@
                 android:layout_gravity="center"
                 android:background="@null"
                 app:tint="@color/black"
-                android:foreground="?attr/selectableItemBackground"
                 android:clickable="true"
                 android:src="@drawable/custome_sattlite"
                 />
