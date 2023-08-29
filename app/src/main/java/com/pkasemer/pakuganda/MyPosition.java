@@ -1,6 +1,7 @@
 package com.pkasemer.pakuganda;
 
-import static com.pkasemer.pakuganda.TakeNote.EXTRA_MESSAGE;
+
+import static com.pkasemer.pakuganda.ManualNotes.EXTRA_MESSAGE;
 
 import android.Manifest;
 import android.content.Context;

@@ -22,7 +22,6 @@ import java.util.ArrayList;
 
 public class TakeNote extends AppCompatActivity {
 
-    public static final String EXTRA_MESSAGE = "com.pkasemer.pakuganda.notes";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -1,5 +1,7 @@
 package com.pkasemer.pakuganda;
 
+import static com.pkasemer.pakuganda.ManualNotes.EXTRA_MESSAGE;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
@@ -72,6 +74,11 @@ public class EditNoteActivity extends AppCompatActivity {
 
                         TextView status_view = (TextView) findViewById(R.id.status);
                         status_view.setText("SAVED!");
+
+                        finish();
+                        Intent intent = new Intent(getApplicationContext(), NoteDetail.class);
+                        intent.putExtra(EXTRA_MESSAGE, heading);
+                        startActivity(intent);
                     } catch (FileNotFoundException e) {
                         e.printStackTrace();
                     } catch (IOException e) {
@@ -86,9 +93,9 @@ public class EditNoteActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent1 = new Intent(getApplicationContext(), TakeNote.class);
-                startActivity(intent1);
                 finish();
+                Intent intent1 = new Intent(getApplicationContext(), ManualNotes.class);
+                startActivity(intent1);
             }
         });
     }

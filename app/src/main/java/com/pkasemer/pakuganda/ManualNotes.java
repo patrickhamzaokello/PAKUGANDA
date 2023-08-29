@@ -18,6 +18,8 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 
 public class ManualNotes extends AppCompatActivity {
 
@@ -35,6 +37,8 @@ public class ManualNotes extends AppCompatActivity {
         String[] array = notesDirectory.list();
         ArrayList<String> arrayList = new ArrayList<>();
         final ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, arrayList);
+        // Sort the array in reverse order
+        Arrays.sort(array, Collections.reverseOrder());
         for (String filename : array) {
             filename = filename.replace(".txt", "");
             System.out.println(filename);

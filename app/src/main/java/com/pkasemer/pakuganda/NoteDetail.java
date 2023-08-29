@@ -24,7 +24,7 @@ public class NoteDetail extends AppCompatActivity {
         setContentView(R.layout.activity_note_detail);
 
         Intent intent = getIntent();
-        final String message = intent.getStringExtra(TakeNote.EXTRA_MESSAGE);
+        final String message = intent.getStringExtra(ManualNotes.EXTRA_MESSAGE);
 
         // Capture the layout's TextView and set the string as its text
         final TextView textView = findViewById(R.id.Heading);
@@ -60,7 +60,7 @@ public class NoteDetail extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 File file = new File(filePath);
-                Intent intent = new Intent(getApplicationContext(), TakeNote.class);
+                Intent intent = new Intent(getApplicationContext(), NoteDetail.class);
                 file.delete();
                 startActivity(intent);
             }
