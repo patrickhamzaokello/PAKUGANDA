@@ -52,7 +52,7 @@ public class EditNoteActivity extends AppCompatActivity {
         }
         final EditText editText = (EditText) findViewById(R.id.contentfield);
         TextView textView = (TextView) findViewById(R.id.heading_view);
-        textView.setText(heading);
+        textView.setText("Title: "+heading);
         Button button_save = (Button) findViewById(R.id.savebutton);
         button_save.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,6 +88,7 @@ public class EditNoteActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent1 = new Intent(getApplicationContext(), TakeNote.class);
                 startActivity(intent1);
+                finish();
             }
         });
     }

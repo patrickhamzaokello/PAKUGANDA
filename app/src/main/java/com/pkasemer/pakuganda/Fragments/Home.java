@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 
+import com.pkasemer.pakuganda.ManualNotes;
 import com.pkasemer.pakuganda.MyPosition;
 import com.pkasemer.pakuganda.R;
 
@@ -42,8 +43,8 @@ public class Home extends Fragment {
         viewMap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavController navController = NavHostFragment.findNavController(requireParentFragment());
-                navController.navigate(R.id.action_navigation_home_to_navigation_map);
+                Intent intent = new Intent(getContext(), ManualNotes.class);
+                getContext().startActivity(intent);
 
             }
         });

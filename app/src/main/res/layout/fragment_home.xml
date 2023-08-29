@@ -91,7 +91,12 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/gps_head">
 
-
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/material_location"
+                app:tint="@color/md_theme_light_onPrimary" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -119,7 +124,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:fontFamily="@font/lexend_regular"
-            android:text="Checkout a Map view of what we are doing."
+            android:text="view and manage all your saved notes from here. you can edit or delete saved notes"
             android:textColor="#DEE1DA"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -129,7 +134,7 @@
 
         <LinearLayout
             android:id="@+id/viewmapbtn"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="18dp"
             android:background="@drawable/rounded_btn_bg"
@@ -147,14 +152,14 @@
                 android:layout_width="25dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="10dp"
-                android:src="@drawable/material_location"
+                android:src="@drawable/pajamas_requirements"
                 app:tint="@color/md_theme_light_onPrimary" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/lexend_light"
-                android:text="Map View"
+                android:text="View all Notes"
                 android:textColor="#FFFFFF"
                 android:textSize="15sp" />
 

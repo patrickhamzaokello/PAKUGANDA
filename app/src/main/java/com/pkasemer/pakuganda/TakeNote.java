@@ -28,18 +28,6 @@ public class TakeNote extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_take_note);
-        File notesDirectory = new File(getFilesDir(), "notes"); // Create a subdirectory named "notes"
-        notesDirectory.mkdir(); // Make the subdirectory if it doesn't exist
-        String[] array = notesDirectory.list();
-        ArrayList<String> arrayList = new ArrayList<>();
-        final ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, arrayList);
-        for (String filename : array) {
-            filename = filename.replace(".txt", "");
-            System.out.println(filename);
-            adapter.add(filename);
-        }
-        final ListView listView = (ListView) findViewById(R.id.listView);
-        listView.setAdapter(adapter);
         Button button = (Button) findViewById(R.id.savebutton);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,9 +50,11 @@ public class TakeNote extends AppCompatActivity {
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
-                        adapter.add(heading);
-                        listView.setAdapter(adapter);
                         Toast.makeText(TakeNote.this, "Note Saved", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(getApplicationContext(), ManualNotes.class);
+                        finish();
+
+                        startActivity(intent);
                     }else {
                         editTextContent.setError("Content can't be empty!");
                     }
@@ -73,15 +63,6 @@ public class TakeNote extends AppCompatActivity {
                 }
                 editTextContent.setText("");
                 editTextHeading.setText("");
-            }
-        });
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String item = listView.getItemAtPosition(position).toString();
-                Intent intent = new Intent(getApplicationContext(), NoteDetail.class);
-                intent.putExtra(EXTRA_MESSAGE, item);
-                startActivity(intent);
             }
         });
     }

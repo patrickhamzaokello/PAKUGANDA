@@ -9,25 +9,29 @@
 
     <TextView
         android:id="@+id/Heading"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="@dimen/edge_val"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:textAlignment="center"
-        android:gravity="center_horizontal" />
+        android:textColor="@color/black"
+        android:fontFamily="@font/lexend_bold"
+        android:gravity="left" />
 
     <TextView
         android:id="@+id/content"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="TextView"
-        android:textColor="#03A9F4"
+        android:textColor="@color/black"
+        android:layout_marginHorizontal="@dimen/edge_val"
+        android:layout_marginVertical="@dimen/edge_val"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.045"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Heading" />
 
