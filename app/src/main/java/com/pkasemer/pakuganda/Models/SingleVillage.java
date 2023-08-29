@@ -56,7 +56,7 @@ public class SingleVillage {
     private String heading;
     @SerializedName("Activities")
     @Expose
-    private List<Activity> activities;
+    private List<ActivityModel> activities;
     @SerializedName("Needs")
     @Expose
     private List<Need> needs;
@@ -190,11 +190,11 @@ public class SingleVillage {
         this.heading = heading;
     }
 
-    public List<Activity> getActivities() {
+    public List<ActivityModel> getActivities() {
         return activities;
     }
 
-    public void setActivities(List<Activity> activities) {
+    public void setActivities(List<ActivityModel> activities) {
         this.activities = activities;
     }
 

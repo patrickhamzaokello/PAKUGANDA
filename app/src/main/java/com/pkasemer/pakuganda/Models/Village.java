@@ -53,7 +53,7 @@ public class Village {
     private String iconPath;
     @SerializedName("activities")
     @Expose
-    private List<Activity> activities;
+    private List<ActivityModel> activities;
     @SerializedName("leaders")
     @Expose
     private List<Leader> leaders;
@@ -179,11 +179,11 @@ public class Village {
         this.iconPath = iconPath;
     }
 
-    public List<Activity> getActivities() {
+    public List<ActivityModel> getActivities() {
         return activities;
     }
 
-    public void setActivities(List<Activity> activities) {
+    public void setActivities(List<ActivityModel> activities) {
         this.activities = activities;
     }
 

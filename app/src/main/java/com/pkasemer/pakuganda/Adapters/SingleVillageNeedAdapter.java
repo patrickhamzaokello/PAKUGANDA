@@ -12,7 +12,6 @@ import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.request.transition.DrawableCrossFadeFactory;
-import com.pkasemer.pakuganda.Models.Activity;
 import com.pkasemer.pakuganda.Models.Need;
 import com.pkasemer.pakuganda.R;
 

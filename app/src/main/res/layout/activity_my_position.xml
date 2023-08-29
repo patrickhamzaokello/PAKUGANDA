@@ -92,6 +92,39 @@
 
         </LinearLayout>
 
+        <LinearLayout
+            android:id="@+id/make_note"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/rounded_btn_bg"
+            android:foreground="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:paddingVertical="10dp"
+            android:layout_marginTop="18dp"
+            android:backgroundTint="@color/black"
+            android:paddingHorizontal="20dp"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                app:tint="@color/white"
+                android:src="@drawable/pajamas_requirements"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Make a Note"
+                android:fontFamily="@font/lexend_bold"
+                android:textColor="@color/md_theme_light_onPrimary"
+                android:textSize="15sp"/>
+
+        </LinearLayout>
+
 
     </LinearLayout>
 

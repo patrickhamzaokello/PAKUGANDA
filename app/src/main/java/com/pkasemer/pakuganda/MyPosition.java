@@ -1,7 +1,10 @@
 package com.pkasemer.pakuganda;
 
+import static com.pkasemer.pakuganda.TakeNote.EXTRA_MESSAGE;
+
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
@@ -50,7 +53,7 @@ public class MyPosition extends AppCompatActivity {
     ProgressBar main_progress;
     TextView latitude_cords,longitude_cord;
     
-    LinearLayout refresh_gps;
+    LinearLayout refresh_gps,make_note;
 
     private LocationListener locationListener = new LocationListener() {
         @Override
@@ -95,6 +98,7 @@ public class MyPosition extends AppCompatActivity {
         latitude_cords = findViewById(R.id.latitude_cords);
         longitude_cord = findViewById(R.id.longitude_cord);
         refresh_gps = findViewById(R.id.refresh_gps);
+        make_note = findViewById(R.id.make_note);
         main_progress = findViewById(R.id.main_progress);
         mapView.onCreate(savedInstanceState);
         mapView.getMapAsync(new OnMapReadyCallback() {
@@ -218,6 +222,16 @@ public class MyPosition extends AppCompatActivity {
                     googleMap.clear();
                     main_progress.setVisibility(View.VISIBLE);
                     initMarker(location.getLatitude(),location.getLongitude());
+                }
+            });
+
+            make_note.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    String item = location.getLatitude() +","+ location.getLongitude();
+                    Intent intent = new Intent(getApplicationContext(),TakeNote.class);
+                    intent.putExtra(EXTRA_MESSAGE, item);
+                    startActivity(intent);
                 }
             });
             main_progress.setVisibility(View.GONE);

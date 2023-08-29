@@ -16,7 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 
 import com.bumptech.glide.request.transition.DrawableCrossFadeFactory;
-import com.pkasemer.pakuganda.Models.Activity;
+import com.pkasemer.pakuganda.Models.ActivityModel;
 import com.pkasemer.pakuganda.R;
 
 
@@ -41,7 +41,7 @@ public class SingleVillageActivityAdapter extends RecyclerView.Adapter<SingleVil
     }
 
     private final Context context;
-    private final List<Activity> activities;
+    private final List<ActivityModel> activities;
 
 
     DrawableCrossFadeFactory factory =
@@ -49,7 +49,7 @@ public class SingleVillageActivityAdapter extends RecyclerView.Adapter<SingleVil
 
 
 
-    public SingleVillageActivityAdapter(Context context, List<Activity> activityList) {
+    public SingleVillageActivityAdapter(Context context, List<ActivityModel> activityList) {
         this.context = context;
         this.activities = activityList;
 
@@ -64,7 +64,7 @@ public class SingleVillageActivityAdapter extends RecyclerView.Adapter<SingleVil
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     public void onBindViewHolder(ItemViewHolder holder, int position) {
-        final Activity activity = activities.get(position);
+        final ActivityModel activity = activities.get(position);
          holder.heading.setText(activity.getTitle());
          holder.subheading.setText(activity.getInchargePerson() + ", Date Carried out:"+activity.getDateCarriedout());
          holder.description.setText(activity.getDescription());
